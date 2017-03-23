@@ -12,6 +12,7 @@ Key requirements: Company wants to infomr users of their monthly house payments 
 - Administrate admin dashboard
 - Email Billing information to User
 - Meetings Calendar simple_calendar
+- Upload files via carrierwave/AWS
 
 ## UI:
 - Bootstrap -> Formatting
