@@ -4,7 +4,7 @@ Key requirements: Company wants to infomr users of their monthly house payments 
 
 ## Models:
 - Post -> 
-- User -> Devise
+x User -> Devise
 - AdminUser -> STI User
 
 ## Features:
