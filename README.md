@@ -16,3 +16,6 @@ x AdminUser -> STI User
 
 ## UI:
 - Bootstrap -> Formatting
+
+## Refactor TODOS
+- Refactor finance association integration test in finance_spec

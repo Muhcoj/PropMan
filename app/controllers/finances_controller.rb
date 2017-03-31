@@ -9,6 +9,7 @@ class FinancesController < ApplicationController
 
 	def create
 		@finance = Finance.new(finance_params)
+		@finance.user_id = current_user.id
     
     if @finance.save
     	redirect_to @finance, notice: 'Your post was created successfully'
