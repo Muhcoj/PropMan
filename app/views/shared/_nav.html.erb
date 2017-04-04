@@ -9,6 +9,10 @@
 	<li class="<%= active?(finances_path) %>">
 		<%= link_to "Finances", finances_path %>
 	</li>
+	<li class="<%= active?(finances_path) %>">
+		<%= link_to "Add New Entry", new_finance_path, id: 'new_post_from_nav' %>
+	</li>
+
 
 	<li class="dropdown pull-right">
 		 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Account<strong class="caret"></strong></a>
