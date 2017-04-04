@@ -1,1 +1,44 @@
 <h1>Finance</h1>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>
+				#
+			</th>
+			<th>
+				Year
+			</th>
+			<th>
+				Month
+			</th>
+			<th>
+				User
+			</th>
+			<th>
+				Open Payment
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= @finances.each do |finance| %>
+			<tr>
+				<td>
+					<%= finance.id %>
+				</td>
+				<td>
+					<%= finance.year %>
+				</td>
+				<td>
+					<%= finance.month %>
+				</td>
+				<td>
+					<%= truncate(finance.user.last_name) %>
+				</td>
+				<td>
+					<%= finance.payment_due %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

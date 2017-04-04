@@ -1,6 +1,7 @@
 class FinancesController < ApplicationController
 	before_action :set_finance, only: [:show]
-	def index	
+	def index
+		@finances = Finance.all	
 	end
 
 	def new

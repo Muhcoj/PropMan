@@ -18,4 +18,5 @@ x AdminUser -> STI User
 - Bootstrap -> Formatting
 
 ## Refactor TODOS
+- Add full_name method for users
 - Refactor finance association integration test in finance_spec
