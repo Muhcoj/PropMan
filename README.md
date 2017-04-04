@@ -4,6 +4,7 @@ Key requirements: Company wants to infomr users of their monthly house payments 
 
 ## Models:
 - Post -> 
+x Finance -> year:string month:string payment_due:decimal
 x User -> Devise
 x AdminUser -> STI User
 
@@ -15,8 +16,7 @@ x AdminUser -> STI User
 - Upload files via carrierwave/AWS
 
 ## UI:
-- Bootstrap -> Formatting
+x Bootstrap -> Formatting
 
 ## Refactor TODOS
-- Add full_name method for users
 - Refactor finance association integration test in finance_spec
