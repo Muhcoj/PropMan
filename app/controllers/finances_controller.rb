@@ -1,8 +1,9 @@
 class FinancesController < ApplicationController
-	before_action :set_finance, only: [:show]
+	before_action :set_finance, only: [:show, :edit, :update]
 	def index
 		@finances = Finance.all	
 	end
+
 
 	def new
 		@finance = Finance.new
@@ -18,6 +19,21 @@ class FinancesController < ApplicationController
     	render :new
     end
 	end
+
+
+	def edit
+		
+	end
+
+	def update
+
+		if @finance.update(finance_params)
+			redirect_to @finance, notice: 'Your post was created successfully'
+		else
+			render :edit
+		end
+	end
+
 
 	def show
 	end

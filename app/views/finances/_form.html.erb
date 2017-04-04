@@ -1,0 +1,9 @@
+<%= form_for @finance do |f| %>
+
+  <%= f.text_field :year %>
+  <%= f.text_field :month %>
+  <%= f.number_field :payment_due %>
+
+  <%= f.submit 'Save' %>
+
+<%end %>
