@@ -21,24 +21,6 @@
 		</tr>
 	</thead>
 	<tbody>
-		<%= @finances.each do |finance| %>
-			<tr>
-				<td>
-					<%= finance.id %>
-				</td>
-				<td>
-					<%= finance.year %>
-				</td>
-				<td>
-					<%= finance.month %>
-				</td>
-				<td>
-					<%= truncate(finance.user.last_name) %>
-				</td>
-				<td>
-					<%= finance.payment_due %>
-				</td>
-			</tr>
-		<% end %>
+		<%= render @finances %>
 	</tbody>
 </table>
