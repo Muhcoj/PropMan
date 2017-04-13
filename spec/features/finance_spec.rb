@@ -36,6 +36,16 @@ describe 'navigate' do
 		end
 	end
 
+	describe 'delete' do
+		it 'can be deleted' do
+			@finance = FactoryGirl.create(:finance)
+			visit finances_path
+
+			click_link("delete_post_#{@finance.id}_from_index")
+			expect(page.status_code).to eq(200)
+		end
+	end
+
 	describe 'creation' do
 		before do
 			visit new_finance_path

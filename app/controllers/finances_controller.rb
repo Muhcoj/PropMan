@@ -1,5 +1,5 @@
 class FinancesController < ApplicationController
-	before_action :set_finance, only: [:show, :edit, :update]
+	before_action :set_finance, only: [:show, :edit, :update, :destroy]
 	def index
 		@finances = Finance.all	
 	end
@@ -36,6 +36,11 @@ class FinancesController < ApplicationController
 
 
 	def show
+	end
+
+	def destroy
+		@finance.delete
+		redirect_to finances_path, notice: 'Your post was deleted successfully'
 	end
 
 	private

@@ -17,4 +17,7 @@
 	<td>
 		<%= link_to 'Edit', edit_finance_path(finance), id: "edit_#{finance.id}" %>
 	</td>
+	<td>
+		<%= link_to 'Delete', finance_path(finance), method: :delete, id: "delete_post_#{finance.id}_from_index", data: { confirm: 'Are you sure?' } %>
+	</td>
 </tr>
