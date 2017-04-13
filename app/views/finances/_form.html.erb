@@ -1,5 +1,11 @@
 <%= form_for @finance, class: "form-horizontal" do |f| %>
-	
+
+  <% if @finance.errors.any? %>
+    <% @finance.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: "Property Management App Notification", sticky: false) %>
+    <% end %>
+  <% end %>
+
 	<div class="form-group">
 		<%= f.label :year, class: "col-sm-2 control-label" %>
 		<%= f.text_field :year, class: "form-control" %>
@@ -18,6 +24,7 @@
   <%= f.submit 'Save', class: "btn btn-primary btn-block" %>
 
 <%end %>
+
 
 
 
