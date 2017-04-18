@@ -7,30 +7,47 @@ describe 'navigate'  do
 	end
 
 	describe 'index' do
-		it 'can be reached successfully' do
+		before do
 			visit posts_path
+		end
+		it 'can be reached successfully' do
 			expect(page.status_code).to eq(200)
 		end
 
 		it 'has a title of Posts' do
-			visit posts_path
 			expect(page).to have_content(/Posts/)
+		end
+
+		it 'has a list of posts' do
+			post1 = Post.create(title: "Some Title", description: "Some description post1")
+			post2 = Post.create(title: "Some Title", description: "Some description post2")
+			visit posts_path
+			expect(page).to have_content(/post1|post2/)
 		end
 	end
 
 	describe 'Creation' do
-		it 'has a new form that can be reached' do
+		before do
 			visit new_post_path
+		end
+		it 'has a new form that can be reached' do
 			expect(page.status_code).to eq(200)
 		end
 
 		it 'can be created from new form page' do
-			visit new_post_path
 			fill_in 'post[title]', with: "Some title"
       fill_in 'post[description]', with: "Some description asdfasdfasdf"
       click_on "Save"
 
       expect(page).to have_content("Some description")
+		end
+
+		it 'can ce reached by clicking edit on index page' do
+			post = FactoryGirl.create(:post)
+			visit posts_path
+
+			click_link("edit_#{@post.id}")
+			expect(page.status_code).to eq(200)
 		end
 	end
 end

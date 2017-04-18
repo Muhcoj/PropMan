@@ -1,0 +1,10 @@
+<%= @post.inspect %>
+
+<%= form_for @post do |f| %>
+
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+
+  <%= f.submit 'Save' %>
+
+<% end %>
