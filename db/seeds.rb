@@ -2,6 +2,12 @@
 
 puts "1 user created"
 
+100.times do |post|
+	Post.create!(title: 'Some title', description: "some description asdfasdfasdf")
+end
+
+puts "100 Posts have been created"
+
 100.times do |finance|
 	Finance.create!(year: "#{finance} year", month: "#{finance} month", payment_due: 45.80, user_id: @user.id)
 end
