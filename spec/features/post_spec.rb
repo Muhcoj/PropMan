@@ -26,6 +26,25 @@ describe 'navigate'  do
 		end
 	end
 
+	describe 'new' do 
+		it 'has a link to the new form' do
+			visit root_path
+
+			click_link("new_post_from_nav")
+			expect(page.status_code).to eq(200)
+		end
+	end
+
+	describe 'delete' do
+		it 'can be deleted' do
+			@post = FactoryGirl.create(:post)
+			visit posts_path
+
+			click_link("Delete")
+			expect(page.status_code).to eq(200)
+		end
+	end
+
 	describe 'Creation' do
 		before do
 			visit new_post_path
@@ -42,12 +61,12 @@ describe 'navigate'  do
       expect(page).to have_content("Some description")
 		end
 
-		it 'can ce reached by clicking edit on index page' do
+		it 'can be reached by clicking edit on index page' do
 			post = FactoryGirl.create(:post)
 			visit posts_path
 
-			click_link("edit_#{@post.id}")
+			click_link("edit_#{post.id}")
 			expect(page.status_code).to eq(200)
 		end
 	end
-end
+end 
