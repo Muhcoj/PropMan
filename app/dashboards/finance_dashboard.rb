@@ -8,16 +8,17 @@ class FinanceDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    user: Field::BelongsTo,
-    id: Field::Number,
-    year: Field::String,
-    month: Field::String,
+    user: Field::BelongsTo.with_options(searchable: false),
+    id: Field::Number.with_options(searchable: false),
+    year: Field::String.with_options(searchable: true),
+    month: Field::String.with_options(searchable: true),
     gas: Field::String.with_options(searchable: false),
     water: Field::String.with_options(searchable: false),
     electricity: Field::String.with_options(searchable: false),
     payment_due: Field::String.with_options(searchable: false),
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    created_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false),
+    status: Field::Text.with_options(searchable: true),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,15 +28,17 @@ class FinanceDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :user,
-    :id,
+    :status,
     :year,
     :month,
+    :payment_due,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :user,
+    :status,
     :id,
     :year,
     :month,

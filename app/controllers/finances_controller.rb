@@ -46,7 +46,7 @@ class FinancesController < ApplicationController
 	private
 
 		def finance_params
-			params.require(:finance).permit(:year, :month, :payment_due)
+			params.require(:finance).permit(:year, :month, :payment_due, :status)
 		end
 
 		def set_finance
