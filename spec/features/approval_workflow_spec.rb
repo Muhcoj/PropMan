@@ -26,7 +26,7 @@ describe 'navigate' do
 
     	visit edit_finance_path(@finance)
 
-    	expect(page).to_not have_content('paid')
+    	expect(page).to_not have_content('Paid')
     end
   end
 end
