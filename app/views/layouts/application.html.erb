@@ -6,19 +6,30 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="//static1.wetter.com/woys/5/css/w.css" media="all">
+
   </head>
 
   <body>
-  	<div class="container">
+
+  	<div class="container wrapper">
 			<div class="row">
-				<div class="col-md-12">
+        <div class="col-md-12">
 
 					<%= render 'shared/nav' %>
     			<%= yield %>
 
-    		</div>
+        </div>
 			</div>
 		</div>
+
+    <!-- ============================= -->
+    <!-- All your JavaScript comes now -->
+    <!-- ============================= -->
+
+    <script type="text/javascript" src="//static1.wetter.com/woys/5/js/w.js"></script>
+
+    <script type="text/javascript">_wcomWidget({id: 'wcom-3ad3dddfe2b7aa584440f8c748f83047',location: 'DE0012197005',format: '300x250',type: 'summary'});</script>
 
     <%= js add_gritter(flash[:notice], title: "PropMan App Notification", sticky: false, time: 5000) %>
   </body>

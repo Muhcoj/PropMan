@@ -1,11 +1,123 @@
-<div class="jumbotron">
-	<h2>
-		Hello, world!
-	</h2>
-	<p>
-		This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
-	</p>
-	<p>
-		<a class="btn btn-primary btn-large" href="#">Learn more</a>
-	</p>
+<div class="col-md-8">
+	<h1 class="home-nav-txt">Sudetenlandweg</h1>
 </div>
+
+<div class="col-md-4">
+	<table>
+		<tr>
+			<td class="date">Sankt Andreasberg, den <%= Time.now.strftime("%d.%m.%Y") %></td>
+			<td ><%= link_to 'Sign In', user_session_path, class: "btn btn-primary pull-right home-signin" %></td>
+		</tr>
+	</table>
+</div>
+
+
+<div id="home-carousel" class="col-md-8 carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <!-- <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol> -->
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner carousel-layout" role="listbox">
+    <div class="item active">
+      <%= image_tag('277H.jpg', class: "img-responsive") %>
+      <!-- <div class="carousel-caption">
+        ...
+      </div> -->
+    </div>
+    <div class="item">
+      <%= image_tag('277H.jpg', class: "img-responsive") %>
+      <!-- <div class="carousel-caption">
+        ...
+      </div> -->
+    </div>
+    <div class="item">
+      <%= image_tag('277H.jpg', class: "img-responsive") %>
+      <!-- <div class="carousel-caption">
+        ...
+      </div> -->
+    </div>
+    <div class="item">
+      <%= image_tag('277H.jpg', class: "img-responsive") %>
+      <!-- <div class="carousel-caption">
+        ...
+      </div> -->
+    </div>
+  </div> 
+
+    <!-- Controls -->
+   <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a> -->
+</div>
+
+<div class="heading-md col-md-4 well">
+	<div>
+		<div id="wcom-3ad3dddfe2b7aa584440f8c748f83047" style="border: 0px; background-color: transparent; border-radius: 0px; color: rgb(0, 0, 0);" class="wcom-default w300x250">
+			<div class="wcom-city"><a style="color: rgb(0, 0, 0);" href="http://www.wetter.com/deutschland/sankt_andreasberg/st_andreasberg/DE0012197005.html" target="_blank" rel="nofollow" title="Wetter &quot; St. Andreasberg &quot;"></a></div>
+			<div id="wcom-3ad3dddfe2b7aa584440f8c748f83047-weather"></div>
+		</div>
+	</div>
+
+	<h2>Heading MD</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis nibh elit, in gravida elit dapibus et. Quisque quis suscipit tortor.</p>
+	<hr>
+
+</div>
+
+
+<div class= "heading-sm">
+
+	<div class="heading-color" >
+		<div class="col-md-4 hdsm ">
+			<h4>
+				Amtliche bekanntmachungen
+			</h4>
+			<p>
+				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			</p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+	</div>
+	<div class="heading-color" >
+		<div class="col-md-4 hdsm hdsm-border">
+			<h4>
+				Müllabfuhr
+			</h4>
+			<p>
+				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			</p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+	</div>
+	<div class="heading-color" >
+		<div class="col-md-4 hdsm hdsm-border">
+			<h4>
+				Was ist los?
+			</h4>
+			<p>
+				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			</p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+		</div>
+	</div>
+</div>
+
+<%= render 'icons' %>
+
+<%= render 'footer' %>

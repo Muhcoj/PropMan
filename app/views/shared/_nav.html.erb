@@ -1,12 +1,14 @@
-<div class='logo'>
-	<h1>Property Management</h1>
-</div>
+<% if current_user %>
+	<div class='logo'>
+		<h1>Sudetenlandweg</h1>
+		<p>Sankt Andreasberg</p>
+	</div>
 
 <!-- TODO -->
-<% if current_user %>
+
 	<ul class="custom-nav nav nav-tabs">
 		<li class="<%= active?(root_path) %>">
-			<%= link_to "Home", root_path %>
+			<%= link_to "Home", posts_path %>
 		</li>
 		<li class="<%= active?(finances_path) %>">
 			<%= link_to "Finances", finances_path %>
@@ -19,7 +21,7 @@
 		</li>
 
 		<li class="dropdown pull-right">
-			 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Options<strong class="caret"></strong></a>
+			 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= current_user.full_name %> <strong class="caret"></strong></a>
 			<ul class="dropdown-menu">
 
 				<!-- TODO -->
@@ -39,4 +41,5 @@
 		</li>
 	</ul>
 <% end %>
+
 <!-- TODO -->
