@@ -1,4 +1,5 @@
 class FinancesController < ApplicationController
+	before_action :authenticate_user!
 	before_action :set_finance, only: [:show, :edit, :update, :destroy]
 	def index
 		@finances = Finance.all	

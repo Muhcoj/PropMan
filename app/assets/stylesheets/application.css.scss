@@ -4,6 +4,144 @@
 @import "gritter";
 @import "bourbon";
 
+body {
+	background-color: rgb(245, 245, 245);
+}
+
+.wrapper {
+	background-color: rgb(255, 255, 255);
+}
+
+/*******HOME-NAV***********/ 
+
+.home-nav {
+	height: 55px;
+  background-color: white;
+}
+
+.home-nav-txt{
+  text-align: left;
+  margin-top: 10px;
+  font-size: 4em;
+  padding-left: 20px;
+}
+
+.home-signin {
+	margin-top: 35px;
+	margin-right: 10px;
+}
+
+.date {
+	float: right;
+	margin-top: 50px;
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+
+/*******NAVBAR***********/ 
+
+.logo h1 {
+	margin-bottom: 0;
+}
+
 .custom-nav {
 	margin-top: 15px;
 }
+
+
+
+/***********HOME PAGE**********/
+
+
+
+#home-carousel {
+	display: inline-block;
+	padding-left: 0;
+}
+
+.heading-md {
+	display: inline-block;
+	padding: 20px;
+	height: 500px;
+}
+
+.carousel-layout{
+	border-radius: 3px;
+}
+
+/**********SMALL HEADINGS********/
+
+
+
+.hdsm {
+	padding: 19px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.hdsm-border {
+	border-left: 1px solid rgb(169, 169, 169);
+}
+
+.heading-color div:hover {
+	background-color: rgba(51, 122, 183, 1);
+	color: white;
+	border-radius: 3px;
+	-webkit-transition: background-color 1s;
+  -moz-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+
+/*************ICONS************/
+
+.icons {
+	height: 100%;
+	width: 100px;
+	display: inline-block;
+	margin-left: 18%;
+	/*margin-bottom: 10%;*/
+}
+
+.police {
+	background-repeat: no-repeat;
+	background-image: url('/assets/icons/police.png');
+}
+
+.hospital{
+	background-repeat: no-repeat;
+	background-image: url('/assets/icons/hospital2.png');
+}
+
+.fireman {
+	background-repeat: no-repeat;
+	background-image: url('/assets/icons/fireman2.png');
+	margin-bottom: 150px;
+}
+
+.icons p {
+
+}
+
+.icon-address {
+	padding-top: 100px
+}
+
+/*************FOOTER************/
+
+
+.footer {
+
+	position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: rgb(91, 161, 229);
+  min-height: 70px;
+
+}
+
+
