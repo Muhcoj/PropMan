@@ -14,6 +14,7 @@ puts "100 Posts have been created"
 
 100.times do |finance|
 	Finance.create!(year: "#{finance} year", month: "#{finance} month", payment_due: 45.80, user_id: @user.id)
+									# gas: 12345.6, water: 65432.1, electricity: 12345.7, user_id: @user.id)
 end
 
 puts "100 Finances have been created"
