@@ -1,4 +1,19 @@
 <div class="form-group">
+	<%= f.label :year, class: "col-sm-2 control-label" %>
+	<%= f.text_field :year, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :month, class: "col-sm-2 control-label" %>
+	<%= f.text_field :month, class: "form-control" %>
+</div>
+
+<div class="form-group">
+	<%= f.label :payment_due, class: "col-sm-2 control-label" %>
+	<%= f.number_field :payment_due, class: "form-control", :step => 0.01 %>
+</div>
+
+<div class="form-group">
   <%= f.radio_button :status, 'open' %>
   <%= f.label :status, 'Open' %>
 

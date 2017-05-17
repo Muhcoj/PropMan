@@ -6,7 +6,7 @@
 		<%= finance.month %>
 	</td>
 	<td>
-		<%= finance.payment_due %>
+		<%= "€ #{finance.payment_due}" %>
 	</td>
 	<td>
 		<%= link_to 'Edit', edit_finance_path(finance), id: "edit_#{finance.id}" %>
