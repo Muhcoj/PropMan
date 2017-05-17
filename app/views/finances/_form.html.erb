@@ -18,7 +18,7 @@
 
 	<div class="form-group">
 		<%= f.label :payment_due, class: "col-sm-2 control-label" %>
-		<%= f.number_field :payment_due, class: "form-control" %>
+		<%= f.number_field :payment_due, class: "form-control", :step => 0.01 %>
 	</div>	
 
 	<%= render partial: 'status', locals: { f: f } if current_user.type == 'AdminUser' %>
