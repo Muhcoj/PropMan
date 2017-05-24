@@ -23,10 +23,11 @@ class FinancesController < ApplicationController
 
 
 	def edit
-		
+		authorize @finance
 	end
 
 	def update
+		authorize @finance
 
 		if @finance.update(finance_params)
 			redirect_to @finance, notice: 'Your post was created successfully'
