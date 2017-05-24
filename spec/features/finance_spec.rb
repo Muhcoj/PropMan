@@ -90,12 +90,12 @@ describe 'navigate' do
 		it 'can be edited' do
 			visit edit_finance_path(@finance)
 
-			fill_in 'finance[year]', with: "2017"
-      fill_in 'finance[month]', with: "Edited"
-      fill_in 'finance[payment_due]', with: 40.45
+			fill_in 'finance[gas]', with: 12345.6
+      fill_in 'finance[water]', with: 12345.6
+      fill_in 'finance[electricity]', with: 12345.6
       click_on "Save"
 
-      expect(page).to have_content("Edited")
+      expect(page).to have_content("January")
 		end
 	end
 end
