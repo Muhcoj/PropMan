@@ -1,0 +1,7 @@
+<% if flash[:alert] %>
+  <%= js add_gritter(flash[:alert], title: "Property Management Alert", sticky: false, time: 3000) %>
+<% elsif flash[:error] %>
+  <%= js add_gritter(flash[:error], title: "Property Management Error", sticky: false, time: 3000) %>
+<% else %>
+  <%= js add_gritter(flash[:notice], title: "Property Management Notification", sticky: false, time: 3000) %>
+<% end %>
