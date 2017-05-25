@@ -3,9 +3,9 @@ FactoryGirl.define do
     year "2017"
     month "January"
     payment_due 40.50
-    # gas 12345,6
-    # water 65432,1
-    # electricity 12345,7
+    #gas 12345,63
+    #water 65432,13
+    #electricity 12345,73
     user
   end
 

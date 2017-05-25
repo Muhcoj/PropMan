@@ -76,26 +76,32 @@ describe 'navigate' do
 
 	describe 'edit' do
 		before do
-			@finance = FactoryGirl.create(:finance)
+			@edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf")
+      login_as(@edit_user, :scope => :user)
+      @edit_finance = Finance.create(gas: 345.62, water: 145.62, electricity: 145.62, user_id: @edit_user.id)
+			# @finance = FactoryGirl.create(:finance)
 		end
 
-		it 'can be reached by clicking edit on index page' do
-			finance = FactoryGirl.create(:finance)
-			visit finances_path
-
-			click_link("edit_#{finance.id}")
-			expect(page.status_code).to eq(200) 
-		end
 
 		it 'can be edited' do
-			visit edit_finance_path(@finance)
+			visit edit_finance_path(@edit_finance)
 
-			fill_in 'finance[gas]', with: 12345.6
-      fill_in 'finance[water]', with: 12345.6
-      fill_in 'finance[electricity]', with: 12345.6
+			fill_in 'finance[gas]', with: 12345.63
+      fill_in 'finance[water]', with: 12345.63
+      fill_in 'finance[electricity]', with: 12345.63
       click_on "Save"
 
-      expect(page).to have_content("January")
+      expect(page).to have_content("open")
+		end
+
+		it 'cannot be edited by a non authorized user' do
+			logout(:user)
+			non_authorized_user = FactoryGirl.create(:non_authorized_user)
+			login_as(non_authorized_user, :scope => :user)
+
+			visit edit_finance_path(@edit_finance)
+
+			expect(current_path).to eq(root_path)
 		end
 	end
 end
