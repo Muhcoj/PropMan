@@ -24,3 +24,4 @@ x Update the styles for forms
 
 ## Refactor TODOS
 - Refactor finance association integration test in finance_spec
+- Fix finance_spec.rb:56 to have correct user reference and not require update

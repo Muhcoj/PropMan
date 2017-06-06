@@ -52,6 +52,8 @@ describe 'navigate' do
 	describe 'delete' do
 		it 'can be deleted' do
 			@finance = FactoryGirl.create(:finance)
+			# TODO refactor
+			@finance.update(user_id: @user.id)
 			visit finances_path
 
 			click_link("delete_post_#{@finance.id}_from_index")
