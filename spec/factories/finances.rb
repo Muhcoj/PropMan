@@ -19,4 +19,15 @@ FactoryGirl.define do
     # 
     user
   end
+
+  factory :finance_from_other_user, class: "Finance" do
+    year "2016"
+    month "February"
+    payment_due 48.50
+    # gas 65432,1
+    # water 12345,7
+    # electricity 12345,6
+    # 
+    non_authorized_user
+  end
 end

@@ -26,6 +26,19 @@ describe 'navigate' do
 			visit finances_path
 			expect(page).to have_content(/January|February/)
 		end
+
+		it 'has a scope so that only finance creators can see their finances' do 
+			finance1 = Finance.create(year: "2016", month: "February", payment_due: 48.50, user_id: @user.id )
+			finance2 = Finance.create(year: "2016", month: "February", payment_due: 48.50, user_id: @user.id )
+
+    	other_user = User.create(first_name: "Non", last_name: "Authorized", email: "test.test.com", password: "asdfasdf", password_confirmation: "asdfasdf" )
+			
+			finance_from_other_user = Finance.create(year: "2017", month: "December", payment_due: 48.50, user_id: other_user.id )
+
+			visit finances_path
+			
+			expect(page).to_not have_content(/December/)
+		end
 	end
 
 	describe 'new' do
@@ -56,21 +69,21 @@ describe 'navigate' do
 	# 	end
 
 	# 	it 'can be created from new form page' do
- #      fill_in 'finance[gas]', with: 12345.6
- #      fill_in 'finance[water]', with: 65432.1
- #      fill_in 'finance[electricity]', with: 12345.7
+ #      fill_in 'finance[year]', with: "2017"
+ #      fill_in 'finance[month]', with: "January"
+ #      fill_in 'finance[payment_due]', with: 40.50
  #      click_on "Save"
 
- #      expect(page).to have_content(65432.1)
+ #      expect(page).to have_content("2017")
 	# 	end
 
 	# 	it 'will have a user associated with it' do
-	# 		fill_in 'finance[gas]', with: 12345.6
- #      fill_in 'finance[water]', with: 65432.1
- #      fill_in 'finance[electricity]', with: 12345.7
+	# 		fill_in 'finance[year]', with: "2017"
+ #      fill_in 'finance[month]', with: "January"
+ #      fill_in 'finance[payment_due]', with: 40.50
  #      click_on "Save"
 
- #      expect(User.last.finances.last.month).to eq(12345.7)
+ #      expect(User.last.finances.last.month).to eq("2017")
 	# 	end
 	# end
 
