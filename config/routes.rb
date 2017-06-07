@@ -9,6 +9,10 @@ Rails.application.routes.draw do
     root to: "users#index"
   end
 
+  devise_scope :user do
+    delete 'logout', to: 'static#homepage'
+  end
+
   resources :posts
   resources :finances
   devise_for :users, skip: [:registrations]

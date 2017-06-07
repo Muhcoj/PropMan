@@ -3,7 +3,7 @@ class FinancesController < ApplicationController
 	before_action :set_finance, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@finances = current_user.finances
+		@finances = Finance.finances_by current_user
 	end
 
 
