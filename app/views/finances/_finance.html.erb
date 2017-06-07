@@ -9,6 +9,9 @@
 		<%= "€ #{finance.payment_due}" %>
 	</td>
 	<td>
+		<%= status_label finance.status %></span>
+	</td>
+	<td>
 		<%= link_to 'Edit', edit_finance_path(finance), id: "edit_#{finance.id}" %>
 	</td>
 	<td>

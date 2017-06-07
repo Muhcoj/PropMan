@@ -14,7 +14,7 @@ x Administrate admin dashboard
 - Email Billing information to User
 - Meetings Calendar simple_calendar
 - Upload files via carrierwave/AWS
-- Make Homepage visible for everyone
+x Make Homepage visible for everyone
 
 ## UI:
 x Bootstrap -> Formatting
@@ -23,5 +23,3 @@ x Update the styles for forms
 - Style Homepage
 
 ## Refactor TODOS
-- Refactor finance association integration test in finance_spec
-- Fix finance_spec.rb:56 to have correct user reference and not require update
