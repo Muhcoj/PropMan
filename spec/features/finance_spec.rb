@@ -1,9 +1,14 @@
 require 'rails_helper'
 
 describe 'navigate' do
+	let(:user) { FactoryGirl.create(:user) }
+
+	let(:finance) do 
+		Finance.create(year: "2016", month: "February", payment_due: 48.50, user_id: user.id)
+	end
+
 	before do
-		@user = FactoryGirl.create(:user)
-		login_as(@user, :scope => :user)
+		login_as(user, :scope => :user)
 	end
 
 	describe 'index' do
@@ -21,16 +26,13 @@ describe 'navigate' do
 
 		it 'has a list of finances' do
 			finance1 = FactoryGirl.create(:finance)
-			finance2 = FactoryGirl.create(:second_finance, user_id: @user.id) #FactoryGirl factories need to be instantiated and need to have the user_if manually defined.
+			finance2 = FactoryGirl.create(:second_finance, user_id: user.id) #FactoryGirl factories need to be instantiated and need to have the user_if manually defined.
 			#finance2.update!(user_id: @user.id)
 			visit finances_path
 			expect(page).to have_content(/January|February/)
 		end
 
-		it 'has a scope so that only finance creators can see their finances' do 
-			finance1 = Finance.create(year: "2016", month: "February", payment_due: 48.50, user_id: @user.id )
-			finance2 = Finance.create(year: "2016", month: "February", payment_due: 48.50, user_id: @user.id )
-
+		it 'has a scope so that only finance creators can see their finances' do
     	other_user = User.create(first_name: "Non", last_name: "Authorized", email: "test.test.com", password: "asdfasdf", password_confirmation: "asdfasdf" )
 			
 			finance_from_other_user = Finance.create(year: "2017", month: "December", payment_due: 48.50, user_id: other_user.id )
@@ -51,12 +53,16 @@ describe 'navigate' do
 
 	describe 'delete' do
 		it 'can be deleted' do
-			@finance = FactoryGirl.create(:finance)
-			# TODO refactor
-			@finance.update(user_id: @user.id)
+			logout(:user)
+
+			delete_user = FactoryGirl.create(:user)
+			login_as(delete_user, :scope => :user)
+
+			finance_to_delete = Finance.create(year: "2017", month: "December", payment_due: 48.50, user_id: delete_user.id )
+
 			visit finances_path
 
-			click_link("delete_post_#{@finance.id}_from_index")
+			click_link("delete_post_#{finance_to_delete.id}_from_index")
 			expect(page.status_code).to eq(200)
 		end
 	end
@@ -90,16 +96,8 @@ describe 'navigate' do
 	# end
 
 	describe 'edit' do
-		before do
-			@edit_user = User.create(first_name: "asdf", last_name: "asdf", email: "asdfasdf@asdf.com", password: "asdfasdf", password_confirmation: "asdfasdf")
-      login_as(@edit_user, :scope => :user)
-      @edit_finance = Finance.create(gas: 345.62, water: 145.62, electricity: 145.62, user_id: @edit_user.id)
-			# @finance = FactoryGirl.create(:finance)
-		end
-
-
 		it 'can be edited' do
-			visit edit_finance_path(@edit_finance)
+			visit edit_finance_path(finance)
 
 			fill_in 'finance[gas]', with: 12345.63
       fill_in 'finance[water]', with: 12345.63
@@ -114,7 +112,7 @@ describe 'navigate' do
 			non_authorized_user = FactoryGirl.create(:non_authorized_user)
 			login_as(non_authorized_user, :scope => :user)
 
-			visit edit_finance_path(@edit_finance)
+			visit edit_finance_path(finance)
 
 			expect(current_path).to eq(root_path)
 		end
