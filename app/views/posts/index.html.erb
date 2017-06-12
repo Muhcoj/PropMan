@@ -1,8 +1,18 @@
 <h1>Posts</h1>
 
 
-<%= render @posts %>
+<%#= render @posts %>
+<% @posts.each do |post| %>
+  
+  <h2><%= link_to post.title, post %></h2>
+  <%= truncate(post.description) %>
+  <%= post.created_at %>
+  <br>
+  <br>
+  <%= link_to 'Edit', edit_post_path(post), id: "edit_#{post.id}" %>
+  <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <hr>
+<% end %> 
 
-
-<%= paginate @posts %>
+<%= paginate @posts, remote: true %>
 
