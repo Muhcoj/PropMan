@@ -55,6 +55,7 @@ class FinanceDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :user,
+    :status,
     :year,
     :month,
     :gas,

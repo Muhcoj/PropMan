@@ -6,13 +6,13 @@
 		<%= finance.month %>
 	</td>
 	<td>
-		<%= "€ #{finance.payment_due}" %>
+		<%= link_to "€ #{finance.payment_due}", finance %>
 	</td>
 	<td>
 		<%= status_label finance.status %></span>
 	</td>
 	<td>
-		<%= link_to 'Edit', edit_finance_path(finance), id: "edit_#{finance.id}" %>
+		<%= link_to 'Edit', edit_finance_path(finance), id: "edit_#{finance.id}" %> 
 	</td>
 	<td>
 		<%= link_to 'Delete', finance_path(finance), method: :delete, id: "delete_post_#{finance.id}_from_index", data: { confirm: 'Are you sure?' } %>
