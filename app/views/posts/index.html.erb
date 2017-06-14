@@ -1,18 +1,24 @@
 <h1>Posts</h1>
 
+<table class="table table-striped table-hover">
+	<thead>
+		<tr>
+			<th>
+				Title
+			</th>
+			<th>
+				Description
+			</th>
+		</tr>
+	</thead>
+	<tbody id="posts">
+		<%= render @posts %>
+	</tbody>
 
-<%#= render @posts %>
-<% @posts.each do |post| %>
-  
-  <h2><%= link_to post.title, post %></h2>
-  <%= truncate(post.description) %>
-  <%= post.created_at %>
-  <br>
-  <br>
-  <%= link_to 'Edit', edit_post_path(post), id: "edit_#{post.id}" %>
-  <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <hr>
-<% end %> 
+</table>
 
-<%= paginate @posts, remote: true %>
+
+<div id="paginator">
+	<%= paginate @posts, remote: true %>
+</div>
 

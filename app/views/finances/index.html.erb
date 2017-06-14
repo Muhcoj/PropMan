@@ -17,12 +17,12 @@
 			</th>
 		</tr>
 	</thead>
-	<tbody>
+	<tbody id="finances">
 		<%= render @finances %>
 	</tbody>
 
 </table>
 
-<div id="#">
-	<%= paginate @finances %>
+<div id="paginator">
+	<%= paginate @finances, remote: true %>
 </div>

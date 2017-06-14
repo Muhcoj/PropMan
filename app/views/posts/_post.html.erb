@@ -1,11 +1,12 @@
-<% @posts.each do |post| %>
-  
-  <h2><%= link_to post.title, post %></h2>
-  <%= truncate(post.description) %>
-  <%= post.created_at %>
-  <br>
-  <br>
-  <%= link_to 'Edit', edit_post_path(post), id: "edit_#{post.id}" %>
-  <%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <hr>
-<% end %> 
+<tr>
+	<td>
+		<%= post.title %>
+	</td>
+	<td>
+		<%= link_to post.description.truncate(25), post %>
+	</td>
+	<td>
+		<%= post.created_at %>
+	</td>
+</tr>
+
