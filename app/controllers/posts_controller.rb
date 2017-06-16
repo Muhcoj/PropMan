@@ -4,6 +4,8 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.order('created_at DESC').page(params[:page]).per(5)
+
+		@open_invoices = Finance.where(status: 'open')
 	end
 
 	def new

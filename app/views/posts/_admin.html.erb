@@ -1,28 +1,14 @@
 <div class='container-fluid'>
-	<div class='open-invoices row'>
-		<div class='invoice col-md-3'>
-			<p>asdf</p>
-		</div>
-		<div class='invoice col-md-3'>
-			<p>asdf</p>
-		</div>
-		<div class='invoice col-md-3'>
-			<p>asdf</p>
-		</div>
-		<div class='invoice col-md-3'>
-			<p>asdf</p>
-		</div>
-		<div class='invoice col-md-3'>
-			<p>asdf</p>
-		</div>
-		<div class='invoice col-md-3'>
-			<p>asdf</p>
-		</div>
+	<div class='open-postpage row'>
+		<h2>All Open Invoices</h2>
+		<hr>
+		
+		<%= render partial: 'open_invoices', locals: { open_invoices: @open_invoices } %>
 	</div>
-</div>
 
 
 
-<div>
+	<div>
 
+	</div>
 </div>

@@ -1,0 +1,22 @@
+<% open_invoices.each do |open_invoice|%>
+	<div class='invoice col-md-3'>
+		<h4>
+			<%= open_invoice.user.full_name %>
+		</h4>
+		<p>
+			<span class='invoice-details'>Date:</span> <%= open_invoice.year %> <%= open_invoice.year %>
+		</p>
+		<p>
+			<span class='invoice-details'>Open invoice:</span> € <%= open_invoice.payment_due %>
+		</p>
+
+		<div class='row'>
+			<div class='col-md-6 column'>
+				<%= link_to 'Reminder', root_path, class: 'btn btn-warning btn-block' %>
+			</div>
+			<div class='col-md-6 column'>
+				<%= link_to 'Edit', root_path, class: 'btn btn-success btn-block' %>
+			</div>
+		</div>
+	</div>
+<% end %>
