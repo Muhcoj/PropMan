@@ -1,5 +1,11 @@
 <h1>Posts</h1>
 
+<% if admin_types.include?(current_user.try(:type)) %>
+	<%= render 'admin' %>
+<% else %>
+	<%= render 'homeowner' %>
+<% end %>
+
 <table class="table table-striped table-hover">
 	<thead>
 		<tr>
@@ -21,4 +27,4 @@
 <div id="paginator">
 	<%= paginate @posts, remote: true %>
 </div>
-
+ 
