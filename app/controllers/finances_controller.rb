@@ -1,9 +1,15 @@
 class FinancesController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_finance, only: [:show, :edit, :update, :destroy]
+	before_action :set_finance, only: [:show, :edit, :update, :destroy, :paid]
 
 	def index
 		@finances = Finance.finances_by(current_user).page(params[:page]).per(5)
+	end
+
+	def paid
+		authorize @finance
+		@finance.paid!
+		redirect_to posts_url, notice: "The finance has been approved"
 	end
 
 

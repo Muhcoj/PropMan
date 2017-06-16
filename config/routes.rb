@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :finances
+  resources :finances do 
+    member do
+      get :paid
+    end
+  end
   devise_for :users, skip: [:registrations]
 
   devise_scope :user do  

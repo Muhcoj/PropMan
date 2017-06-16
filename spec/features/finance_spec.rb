@@ -93,7 +93,7 @@ describe 'navigate' do
       fill_in 'finance[payment_due]', with: 40.50
       click_on "Save"
 
-      expect(User.last.finances.last.month).to eq("2017")
+      expect(User.last.finances.last.month).to eq("January")
 		end
 	end
 
@@ -116,7 +116,7 @@ describe 'navigate' do
 
 			visit edit_finance_path(finance)
 
-			expect(current_path).to eq(root_path)
+			expect(current_path).to eq(posts_path)
 		end
 	end
 end
