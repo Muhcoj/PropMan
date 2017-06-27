@@ -9,7 +9,7 @@ class FinancesController < ApplicationController
 	def paid
 		authorize @finance
 		@finance.paid!
-		redirect_to posts_url, notice: "The finance has been approved"
+		redirect_to posts_url, notice: "The payment has been approved"
 	end
 
 

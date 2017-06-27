@@ -5,7 +5,11 @@ class PostsController < ApplicationController
 	def index
 		@posts = Post.order('created_at DESC').page(params[:page]).per(5)
 
-		@open_invoices = Finance.where(status: 'open')
+		if admin_types.include?(current_user.type)
+			@open_invoices = Finance.open
+		else
+			#someting else
+		end
 	end
 
 	def new
