@@ -1,0 +1,20 @@
+<% @homeowner_open_invoices.each do |homeowner_open_invoice|%>
+	<div class='col-md-12 homeowner-invoice '>
+		<p id="homeowner-font">
+			<span class='homeowner-invoice-details'>Date:</span> <%= homeowner_open_invoice.month %> <%= homeowner_open_invoice.year %>
+		</p>
+		<p id="homeowner-font">
+			<span class='homeowner-invoice-details'>Open invoice:</span> € <%= homeowner_open_invoice.payment_due %>
+		</p>
+
+		<div class='row'>
+			<div class='col-md-6 column'>
+				<!-- TODO LINK MAILING -->
+				<%= link_to 'View', finances_path, class: 'btn btn-warning btn-block' %>
+				<!-- TODO LINK MAILING -->
+			</div>
+		</div>
+	</div>
+<% end %>
+
+	

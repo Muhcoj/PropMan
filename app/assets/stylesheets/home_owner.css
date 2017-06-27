@@ -1,3 +1,22 @@
 .home-owner {
 	margin: 40px 20px;
 }
+
+#homeowner-font {
+	font-size: 1em;
+}
+
+.homeowner-invoice-details {
+	font-weight: 900;
+}
+
+.homeowner-invoice {
+	background-color: #277cb2;
+	color: white;
+	margin-bottom: 15px;
+	padding: 15px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+}
+

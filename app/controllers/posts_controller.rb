@@ -8,8 +8,10 @@ class PostsController < ApplicationController
 		if admin_types.include?(current_user.type)
 			@open_invoices = Finance.open
 		else
-			#someting else
+			@homeowner_open_invoices = Finance.finances_by(current_user).open
 		end
+
+
 	end
 
 	def new
