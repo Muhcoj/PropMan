@@ -14,13 +14,9 @@ describe 'navigate'  do
 			expect(page.status_code).to eq(200)
 		end
 
-		it 'has a title of Posts' do
-			expect(page).to have_content(/Posts/)
-		end
-
 		it 'has a list of posts' do
-			post1 = Post.create(title: "Some Title", description: "Some description post1")
-			post2 = Post.create(title: "Some Title", description: "Some description post2")
+			post1 = Post.create(title: "Some Title", date: Date.today, description: "Some description post1")
+			post2 = Post.create(title: "Some Title", date: Date.today, description: "Some description post2")
 			visit posts_path
 			expect(page).to have_content(/post1|post2/)
 		end

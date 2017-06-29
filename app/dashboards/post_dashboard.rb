@@ -8,12 +8,13 @@ class PostDashboard < Administrate::BaseDashboard
   # which determines how the attribute is displayed
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
-    id: Field::Number,
-    title: Field::String,
-    image: Field::String,
-    description: Field::Text,
-    created_at: Field::DateTime,
-    updated_at: Field::DateTime,
+    id: Field::Number.with_options(searchable: false),
+    title: Field::String.with_options(searchable: true),
+    date: Field::DateTime.with_options(searchable: false),
+    image: Field::String.with_options(searchable: false),
+    description: Field::Text.with_options(searchable: true),
+    created_at: Field::DateTime.with_options(searchable: false),
+    updated_at: Field::DateTime.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -24,6 +25,7 @@ class PostDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
+    :date,
     :image,
     :description,
   ].freeze
@@ -33,6 +35,7 @@ class PostDashboard < Administrate::BaseDashboard
   SHOW_PAGE_ATTRIBUTES = [
     :id,
     :title,
+    :date,
     :image,
     :description,
     :created_at,
@@ -44,6 +47,7 @@ class PostDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :title,
+    :date,
     :image,
     :description,
   ].freeze

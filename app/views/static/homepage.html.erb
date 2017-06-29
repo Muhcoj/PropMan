@@ -1,123 +1,239 @@
-<div class="col-md-8">
-	<h1 class="home-nav-txt">Sudetenlandweg</h1>
-</div>
+<div class="container-fluid">
+	<div class="row">
+		
+		<div class="col-md-8">
+			<div class="head-homepage">
+				<h1 class='head-font-bold'>
+					Sudetenlandweg <br>
 
-<div class="col-md-4">
-	<table>
-		<tr>
-			<td class="date">Sankt Andreasberg, den <%= Time.now.strftime("%d.%m.%Y") %></td>
-			<td ><%= link_to 'Sign In', user_session_path, class: "btn btn-primary pull-right home-signin" %></td>
-		</tr>
-	</table>
-</div>
+					<small class='head-font-italic'>Sankt Andreasberg</small>
+				</h1>
 
-
-<div id="home-carousel" class="col-md-8 carousel slide" data-ride="carousel">
-
-  <!-- Indicators -->
-  <!-- <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol> -->
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner carousel-layout" role="listbox">
-    <div class="item active">
-      <%= image_tag('277H.jpg', class: "img-responsive") %>
-      <!-- <div class="carousel-caption">
-        ...
-      </div> -->
-    </div>
-    <div class="item">
-      <%= image_tag('277H.jpg', class: "img-responsive") %>
-      <!-- <div class="carousel-caption">
-        ...
-      </div> -->
-    </div>
-    <div class="item">
-      <%= image_tag('277H.jpg', class: "img-responsive") %>
-      <!-- <div class="carousel-caption">
-        ...
-      </div> -->
-    </div>
-    <div class="item">
-      <%= image_tag('277H.jpg', class: "img-responsive") %>
-      <!-- <div class="carousel-caption">
-        ...
-      </div> -->
-    </div>
-  </div> 
-
-    <!-- Controls -->
-   <!--  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a> -->
-</div>
-
-<div class="heading-md col-md-4 well">
-	<h2>Heading MD</h2>
-	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam mollis nibh elit, in gravida elit dapibus et. Quisque quis suscipit tortor.</p>
-	<hr>
-
-	<div>
-		<div id="wcom-3ad3dddfe2b7aa584440f8c748f83047" style="border: 0px; background-color: transparent; border-radius: 0px; color: rgb(0, 0, 0);" class="wcom-default w300x250">
-			<div class="wcom-city"><a style="color: rgb(0, 0, 0);" href="http://www.wetter.com/deutschland/sankt_andreasberg/st_andreasberg/DE0012197005.html" target="_blank" rel="nofollow" title="Wetter &quot; St. Andreasberg &quot;"></a></div>
-			<div id="wcom-3ad3dddfe2b7aa584440f8c748f83047-weather"></div>
+			</div>
 		</div>
-	</div>
+		<div class="col-md-4">
+			<div>
+				<%= link_to 'Sign In', user_session_path, class: "btn btn-primary pull-right home-signin " %>
+			</div>
+			<div>
+				<!--
+				<div id="wcom-8cf0784d3969b4fc551dc94fa168205a" style="border: 1px solid rgb(255, 255, 255); background-color: rgb(255, 255, 255); border-radius: 5px; color: rgb(2, 2, 2);" class="wcom-default w150x150"><link rel="stylesheet" href="//static1.wetter.com/woys/5/css/w.css" media="all"><div class="wcom-city"><a style="color: rgb(2, 2, 2);" href="http://www.wetter.com/deutschland/berlin/DE0001020.html" target="_blank" rel="nofollow" title="Wetter Berlin">Wetter Berlin</a></div><div id="wcom-8cf0784d3969b4fc551dc94fa168205a-weather"></div><script type="text/javascript" src="//static1.wetter.com/woys/5/js/w.js"></script><script type="text/javascript">_wcomWidget({id: 'wcom-8cf0784d3969b4fc551dc94fa168205a',location: 'DE0001020',format: '150x150',type: 'spaces'});</script></div>
+			-->
+			</div>
+		</div>
+		<div class='col-md-12'>
+			<div class="carousel slide" id="carousel-284775">
+				<ol class="carousel-indicators">
+					<li class="active" data-slide-to="0" data-target="#carousel-284775">
+					</li>
+					<li data-slide-to="1" data-target="#carousel-284775">
+					</li>
+					<li data-slide-to="2" data-target="#carousel-284775">
+					</li>
+				</ol>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img alt="Carousel Bootstrap First" src="http://lorempixel.com/output/sports-q-c-1600-500-1.jpg" />
+						<div class="carousel-caption">
+							<h4 class='head-font-bold'>
+								First Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Carousel Bootstrap Second" src="http://lorempixel.com/output/sports-q-c-1600-500-2.jpg" />
+						<div class="carousel-caption">
+							<h4>
+								Second Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+					<div class="item">
+						<img alt="Carousel Bootstrap Third" src="http://lorempixel.com/output/sports-q-c-1600-500-3.jpg" />
+						<div class="carousel-caption">
+							<h4>
+								Third Thumbnail label
+							</h4>
+							<p>
+								Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.
+							</p>
+						</div>
+					</div>
+				</div> <a class="left carousel-control" href="#carousel-284775" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a> <a class="right carousel-control" href="#carousel-284775" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+			</div>
+		</div>
 
-</div>
-
-
-<div class= "heading-sm">
-
-	<div class="heading-color" >
-		<div class="col-md-4 hdsm ">
-			<h4>
-				Amtliche bekanntmachungen
-			</h4>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
+		<div class="col-md-3">
+			<h3 class='head-font-bold'>
+				h3. Lorem ipsum dolor sit amet.
+			</h3><img alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" />
+			<p class="text-muted">
+				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
 			</p>
 		</div>
-	</div>
-	<div class="heading-color" >
-		<div class="col-md-4 hdsm hdsm-border">
-			<h4>
-				Müllabfuhr
-			</h4>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+		<div class="col-md-6">	
+			<dl>
+				<dt>
+					Description lists
+				</dt>
+				<dd>
+					A description list is perfect for defining terms.
+				</dd>
+				<dt>
+					Euismod
+				</dt>
+				<dd>
+					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+				</dd>
+				<dd>
+					Donec id elit non mi porta gravida at eget metus.
+				</dd>
+				<dt>
+					Malesuada porta
+				</dt>
+				<dd>
+					Etiam porta sem malesuada magna mollis euismod.
+				</dd>
+				<dt>
+					Felis euismod semper eget lacinia
+				</dt>
+				<dd>
+					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+				</dd>
+			</dl>
+		</div>
+		<div class="col-md-3">
+			<h3 class='head-font-bold'>
+				h3. Lorem ipsum dolor sit emet.
+			</h3>
+			<p class="text-left">
+				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
 			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
+		</div>
+		
+			
+		<div class="col-md-6">
+			 
+			<h3 class='head-font-bold'>
+				h3. Lorem ipsum dolor sit amet.
+			</h3>
+			<p class="text-muted">
+				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
 			</p>
 		</div>
 	</div>
-	<div class="heading-color" >
-		<div class="col-md-4 hdsm hdsm-border">
-			<h4>
-				Was ist los?
-			</h4>
-			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-			</p>
-			<p>
-				<a class="btn" href="#">View details »</a>
-			</p>
+	<div class="row">
+		<div class="col-md-4">
+			<a id="modal-580946" href="#modal-container-580946" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+			
+			<div class="modal fade" id="modal-container-580946" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							 
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								Modal title
+							</h4>
+						</div>
+						<div class="modal-body">
+							...
+						</div>
+						<div class="modal-footer">
+							 
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button> 
+							<button type="button" class="btn btn-primary">
+								Save changes
+							</button>
+						</div>
+					</div>
+					
+				</div>
+			</div>
 		</div>
+		<div class="col-md-4">
+			<a id="modal-580946" href="#modal-container-580946" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+			
+			<div class="modal fade" id="modal-container-580946" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							 
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								Modal title
+							</h4>
+						</div>
+						<div class="modal-body">
+							...
+						</div>
+						<div class="modal-footer">
+							 
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button> 
+							<button type="button" class="btn btn-primary">
+								Save changes
+							</button>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-md-4">	
+			<a id="modal-580946" href="#modal-container-580946" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+			
+			<div class="modal fade" id="modal-container-580946" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+					<div class="modal-content">
+						<div class="modal-header">
+							 
+							<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+								×
+							</button>
+							<h4 class="modal-title" id="myModalLabel">
+								Modal title
+							</h4>
+						</div>
+						<div class="modal-body">
+							...
+						</div>
+						<div class="modal-footer">
+							 
+							<button type="button" class="btn btn-default" data-dismiss="modal">
+								Close
+							</button> 
+							<button type="button" class="btn btn-primary">
+								Save changes
+							</button>
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+		</div>
+		
+
+	
+	
+		<div class="col-md-12">
+			<%= render 'footer' %>
+		</div>
+	</div>
 	</div>
 </div>
-
-<%= render 'icons' %>
-
-<%= render 'footer' %>

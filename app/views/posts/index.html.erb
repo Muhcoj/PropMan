@@ -4,25 +4,5 @@
 	<%= render 'homeowner' %>
 <% end %>
 
-<table class="table table-striped table-hover">
-	<thead>
-		<tr>
-			<th>
-				Title
-			</th>
-			<th>
-				Description
-			</th>
-		</tr>
-	</thead>
-	<tbody id="posts">
-		<%= render @posts %>
-	</tbody>
 
-</table>
-
-
-<div id="paginator">
-	<%= paginate @posts, remote: true %>
-</div>
  

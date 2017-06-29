@@ -6,8 +6,29 @@
 @import "admin_postpage.css";
 @import "home_owner.css";
 
+* {
+	font-family: 'Roboto', sans-serif;;
+}
+
 body {
-	background-color: rgb(245, 245, 245);
+	/*background-color: rgb(245, 245, 245);*/
+}
+
+.head-font-bold {
+	font-style: bold;
+	font-family: 'Montserrat', sans-serif;
+	
+	/*font-family: 'Libre Bodoni Bold';
+	src: url('fonts/libre-bodoni.bold.ttf');*/
+}
+
+.head-font-italic {
+	font-style: italic;
+	font-family: 'Montserrat', sans-serif;
+	/*font-family: 'Sorts Mill Goudy', serif;*/
+
+	/*font-family: 'Libre Bodoni Italic';
+	src: url('fonts/libre-bodoni.italic.ttf');*/
 }
 
 .wrapper {
@@ -56,6 +77,9 @@ body {
 /***********HOME PAGE**********/
 
 
+.head-homepage {
+	
+}
 
 #home-carousel {
 	display: inline-block;
@@ -135,7 +159,7 @@ body {
 
 
 .footer {
-
+	
 	position: absolute;
   right: 0;
   bottom: 0;

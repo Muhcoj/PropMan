@@ -1,13 +1,13 @@
 <% open_invoices.each do |open_invoice|%>
-	<div class='invoice col-md-3'>
+	<div class='col-md-12 homeowner-invoice'> <!-- invoice -->
 		<h4>
 			<%= open_invoice.user.full_name %>
 		</h4>
 		<p>
-			<span class='invoice-details'>Date:</span> <%= open_invoice.year %> <%= open_invoice.year %>
+			<span class='homeowner-invoice-details'>Date:</span> <%= open_invoice.year %> <%= open_invoice.year %> <!-- invoice-details -->
 		</p>
 		<p>
-			<span class='invoice-details'>Open invoice:</span> € <%= open_invoice.payment_due %>
+			<span class='homeowner-invoice-details'>Open invoice:</span> € <%= open_invoice.payment_due %><!-- invoice-details -->
 		</p>
 
 		<div class='row'>

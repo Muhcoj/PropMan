@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Post, type: :model do
   describe "Creation" do
   	before do
-  		@post = Post.create(title: "Any title", description: "Some text")
+  		@post = Post.create(title: "Any title", date: Date.today, description: "Some text")
   	end
 
   	it 'can be created' do

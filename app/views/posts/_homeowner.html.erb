@@ -1,10 +1,14 @@
 <div class='container-fluid'>
 	<div class='row'>
-		<div class='col-md-8 column jumbotron home-owner'>
+		<div id='home-owner' class='col-md-8 column jumbotron home-owner'>
+			<h3>Announcements</h3>
+			<hr>
 			<%= render @posts %>
 		</div>
 
-		<div class='col-md-3 column  home-owner'>
+		<div id='home-owner'  class='col-md-3 column  jumbotron home-owner'>
+			<h3>Open Invoices</h3>
+			<hr>
 			<%= render partial: 'homeowner_open_invoices', locals: { homeowner_open_invoices: @homeowner_open_invoice } %>
 		</div>
 	</div>

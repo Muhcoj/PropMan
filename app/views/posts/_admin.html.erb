@@ -1,14 +1,17 @@
 <div class='container-fluid'>
-	<div class='open-postpage row'>
-		<h2>All Open Invoices</h2>
-		<hr>
-		
-		<%= render partial: 'open_invoices', locals: { open_invoices: @open_invoices } %>
-	</div>
+	<div class='row'>
+		<div id='home-owner' class='col-md-8 column jumbotron home-owner'>
+			<h3>Announcements</h3>
+			<hr>
+			<%= render @posts %>
+		</div>
 
-
-
-	<div>
-
+		<div id='home-owner'  class='col-md-3 column  jumbotron home-owner'>
+			<h3>Open Invoices</h3>
+			<hr>
+			<%= render partial: 'open_invoices', locals: { open_invoices: @open_invoices } %>
+		</div>
 	</div>
 </div>
+
+

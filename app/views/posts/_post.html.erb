@@ -1,12 +1,20 @@
-<tr>
-	<td>
-		<%= post.title %>
-	</td>
-	<td>
-		<%= link_to post.description.truncate(25), post %>
-	</td>
-	<td>
-		<%= post.created_at %>
-	</td>
-</tr>
+<%= link_to(post) do %>
+	<div class='col-md-5 post'>
+		<h3>
+			<%= post.title %>
+		</h3>
+		<hr>
+		<p id='post-date'><i><%= post.date %></i></p>
+		<p>
+			<%= post.description.truncate(45) %>
+		</p>
+	</div>
+<% end %>
+
+
+
+
+
+
+
 
