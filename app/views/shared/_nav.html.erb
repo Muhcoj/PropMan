@@ -1,45 +1,46 @@
-<% if current_user %>
-	<div class='logo'>
-		<h1>Sudetenlandweg</h1>
-		<p>Sankt Andreasberg</p>
-	</div>
+<div class='container'>
+	<% if current_user %>
+		<div class='logo'>
+			<h1 class='head-font-bold'>Sudetenlandweg</h1>
+			<p class='head-font-italic'>Sankt Andreasberg</p>
+		</div>
 
-<!-- TODO -->
+	<!-- TODO -->
 
-	<ul class="custom-nav nav nav-tabs">
-		<li class="<%= active?(root_path) %>">
-			<%= link_to "Home", posts_path %>
-		</li>
-		<li class="<%= active?(finances_path) %>">
-			<%= link_to "Finances", finances_path %>
-		</li>
-		<li class="<%= active?( new_finance_path) %>">
-			<%= link_to "Add Gas and Electricity", new_finance_path, id: 'new_finance_from_nav' %>
-		</li>
-		<li class="<%= active?( new_post_path) %>">
-			<%= link_to "Add Post", new_post_path, id: 'new_post_from_nav' %>
-		</li>
+		<ul class="custom-nav nav nav-tabs">
+			<li class="<%= active?(root_path) %>">
+				<%= link_to "Home", posts_path %>
+			</li>
+			<li class="<%= active?(finances_path) %>">
+				<%= link_to "Finances", finances_path %>
+			</li>
+			<li class="<%= active?( new_finance_path) %>">
+				<%= link_to "Add Gas and Electricity", new_finance_path, id: 'new_finance_from_nav' %>
+			</li>
+			<li class="<%= active?( new_post_path) %>">
+				<%= link_to "Add Post", new_post_path, id: 'new_post_from_nav' %>
+			</li>
 
-		<li class="dropdown pull-right">
-			 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= current_user.full_name %> <strong class="caret"></strong></a>
-			<ul class="dropdown-menu">
+			<li class="dropdown pull-right">
+				 <a href="#" data-toggle="dropdown" class="dropdown-toggle"><%= current_user.full_name %> <strong class="caret"></strong></a>
+				<ul class="dropdown-menu">
 
-				<!-- TODO -->
-				<% if current_user.try(:type) == 'AdminUser' %>
+					<!-- TODO -->
+					<% if current_user.try(:type) == 'AdminUser' %>
+						<li>
+							<%= link_to "Admin Dashboard", admin_root_path %>
+						</li>
+						<li class="divider">
+						</li>
+					<% end %>
+					<!-- TODO -->
+
 					<li>
-						<%= link_to "Admin Dashboard", admin_root_path %>
+						<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 					</li>
-					<li class="divider">
-					</li>
-				<% end %>
-				<!-- TODO -->
-
-				<li>
-					<%= link_to "Logout", destroy_user_session_path, method: :delete %>
-				</li>
-			</ul>
-		</li>
-	</ul>
-<% end %>
-
+				</ul>
+			</li>
+		</ul>
+	<% end %>
+</div>
 <!-- TODO -->

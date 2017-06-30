@@ -14,6 +14,14 @@ body {
 	/*background-color: rgb(245, 245, 245);*/
 }
 
+.overflow {
+	overflow-y: hidden;
+}
+
+.background-main {
+	min-height: 100vw;
+}
+
 .head-font-bold {
 	font-style: bold;
 	font-family: 'Montserrat', sans-serif;
@@ -29,6 +37,80 @@ body {
 
 	/*font-family: 'Libre Bodoni Italic';
 	src: url('fonts/libre-bodoni.italic.ttf');*/
+}
+
+.header-details-blue {
+	background-color: #337ab7;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+.sub-header {
+	background-color: transparent;
+	color: #337ab7;
+}
+
+.header-details-grey {
+	background-color: #777777;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+
+
+.my-container {
+    position: relative;
+    background: #5C97FF;
+    overflow: hidden;
+}
+.my-container:before {
+    content: ' ';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.2;
+    background-image: url('background.jpg');
+    background-repeat: repeat-x;
+    background-position: center;
+    -ms-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.my-container .content {
+    z-index: 2;
+    position: relative;
+} 
+
+.grad-right{
+/*	background: transparent; /* For browsers that do not support gradients */
+  /* For Safari 5.1 to 6.0 */
+ /*background: -webkit-linear-gradient(rgba(166,166,166,0.2),rgba(166,166,166,0),rgba(166,166,166,0.2));
+  /* For Opera 11.1 to 12.0 */
+  /*background: -o-linear-gradient(rgba(166,166,166,0.2),rgba(166,166,166,0),rgba(166,166,166,0.2));
+  /* For Fx 3.6 to 15 */
+  /*background: -moz-linear-gradient(rgba(166,166,166,0.2),rgba(166,166,166,0),rgba(166,166,166,0.2));
+  /* Standard syntax */
+  /*background: linear-gradient(to rgba(166,166,166,0.2),rgba(166,166,166,0),rgba(166,166,166,0.2));*/
+  opacity: 0.6;
+  background-image: url(background.jpg);
+  background-repeat: no-repeat;
+  background-position: cover;
+  -ms-background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  z-index: -1;
+
 }
 
 .wrapper {
@@ -50,7 +132,7 @@ body {
 }
 
 .home-signin {
-	margin-top: 35px;
+	margin-top: 107px;
 	margin-right: 10px;
 }
 
@@ -78,7 +160,7 @@ body {
 
 
 .head-homepage {
-	
+	font-size: 4.3em;
 }
 
 #home-carousel {
@@ -95,6 +177,15 @@ body {
 .carousel-layout{
 	border-radius: 3px;
 }
+
+
+
+/**********CAROUSEL********/
+
+.carousel-layout {
+	margin-bottom: 25px;
+}
+
 
 /**********SMALL HEADINGS********/
 
@@ -122,6 +213,10 @@ body {
 
 
 /*************ICONS************/
+
+.weather-widget {
+	margin: auto;
+}
 
 .icons {
 	height: 100%;

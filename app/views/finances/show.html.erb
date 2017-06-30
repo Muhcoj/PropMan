@@ -1,15 +1,13 @@
-<div>
+<div class="container background-main">
 	<h2><%= @finance.month %> <%= @finance.year %></h2>
-</div>
 
-<div class="well">
-	<div>
-		<h3><span>Open Payment:</span> <%= "€ #{@finance.payment_due}" %></h2>
+	<div class="well">
+		<div>
+			<h3><span>Open Payment:</span> <%= "€ #{@finance.payment_due}" %></h2>
+		</div>
+
+		<div>
+			<h3><span>Status Payment:</span> <%= @finance.status %></h2>
+		</div>
 	</div>
-
-	<div>
-		<h3><span>Status Payment:</span> <%= @finance.status %></h2>
-	</div>
 </div>
-
-<%= @finance.inspect %>
