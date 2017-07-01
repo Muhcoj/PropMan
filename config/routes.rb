@@ -19,6 +19,14 @@ Rails.application.routes.draw do
       get :paid
     end
   end
+
+resources :finances do
+  resources :users    
+  member do  
+    get 'send_invoice_reminder' => 'finances#send_invoice_reminder'  
+  end  
+end 
+
   devise_for :users, skip: [:registrations]
 
   devise_scope :user do  
@@ -28,3 +36,5 @@ Rails.application.routes.draw do
   root to: 'static#homepage'
 
 end
+
+

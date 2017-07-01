@@ -13,7 +13,7 @@
 		<div class='row'>
 			<div class='col-md-6 column'>
 				<!-- TODO LINK MAILING -->
-				<%= link_to 'Reminder', posts_path, class: 'btn btn-warning btn-block' %>
+				<%= link_to 'Reminder',  send_invoice_reminder_finance_path(current_user, @finance), class: 'btn btn-warning btn-block' %>
 				<!-- TODO LINK MAILING -->
 			</div>
 			<div class='col-md-6 column'>
