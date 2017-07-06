@@ -1,6 +1,7 @@
 class UserMailer < ApplicationMailer
-	def new_invoice user
+	def new_invoice (user, finance)
 		@user = user
+		@finance = finance
 		mail(to: @user.email, subject: 'You have a new open invoice from Sudetenlandweg, Sankt Andreasberg.')
 	end
 
