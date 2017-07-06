@@ -7,7 +7,7 @@ AdminUser.create(email: "admin@test.com", password: "asdfasdf", password_confirm
 puts "1 Admin User created"
 
 100.times do |post|
-	Post.create!(title: 'Some title', date: Date.today, description: "some description asdfasdfasdf")
+	Post.create!(title: 'Mitteilung Titel', date: Date.today, description: "Textbeispiele hier schreiben bitte asdfasdfa sdfasdfasdf asdfa")
 end
 
 puts "100 Posts have been created"

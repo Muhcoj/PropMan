@@ -4,20 +4,20 @@
 			<%= open_invoice.user.full_name %>
 		</h4>
 		<p>
-			<span class='homeowner-invoice-details'>Date:</span> <%= open_invoice.year %> <%= open_invoice.year %> <!-- invoice-details -->
+			<span class='homeowner-invoice-details'>Datum:</span> <%= open_invoice.year %> <%= open_invoice.year %> <!-- invoice-details -->
 		</p>
 		<p>
-			<span class='homeowner-invoice-details'>Open invoice:</span> € <%= open_invoice.payment_due %><!-- invoice-details -->
+			<span class='homeowner-invoice-details'>Offener Betrag:</span> € <%= open_invoice.payment_due %><!-- invoice-details -->
 		</p>
 
 		<div class='row'>
 			<div class='col-md-6 column'>
 				<!-- TODO LINK MAILING -->
-				<%= link_to 'Reminder',  send_invoice_reminder_finance_path(current_user, @finance), class: 'btn btn-warning btn-block' %>
+				<%= link_to 'Erinnerung',  send_invoice_reminder_finance_path(current_user, @finance), class: 'btn btn-warning btn-block' %>
 				<!-- TODO LINK MAILING -->
 			</div>
 			<div class='col-md-6 column'>
-				<%= link_to 'Paid', paid_finance_path(open_invoice), class: 'btn btn-success btn-block', id: "paid_#{open_invoice.id}" %>
+				<%= link_to 'Bezahlt', paid_finance_path(open_invoice), class: 'btn btn-success btn-block', id: "paid_#{open_invoice.id}" %>
 			</div>
 		</div>
 	</div>

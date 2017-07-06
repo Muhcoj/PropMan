@@ -45,7 +45,10 @@ describe 'navigate' do
 
 	describe 'new' do
 		it 'has a link from the homepage' do
-			visit root_path
+			logout(:user)
+			admin_user = FactoryGirl.create(:admin_user)
+			login_as(admin_user, :scope => :user)
+			visit finances_path
 			click_link("new_finance_from_nav")
 			expect(page.status_code).to eq(200) 
 		end

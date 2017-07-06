@@ -20,9 +20,11 @@ class FinancesController < ApplicationController
 	def create
 		@finance = Finance.new(finance_params)
 		@finance.user_id = current_user.id
-    
+    @user = current_user
+
     if @finance.save
     	redirect_to @finance, notice: 'Your post was created successfully'
+    	UserMailer.new_invoice(@user, @finance).deliver
     else
     	render :new
     end

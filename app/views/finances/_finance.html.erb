@@ -5,7 +5,7 @@
 	<td>
 		<%= finance.month %>
 	</td>
-	<td>
+	<td class='custom-link'>
 		<%= link_to "€ #{finance.payment_due}", finance %>
 	</td>
 	<td>
@@ -15,6 +15,6 @@
 		<%= link_to 'Edit', edit_finance_path(finance), id: "edit_#{finance.id}" %> 
 	</td>
 	<td>
-		<%= link_to 'Delete', finance_path(finance), method: :delete, id: "delete_post_#{finance.id}_from_index", data: { confirm: 'Are you sure?' } %>
+		<%= link_to 'Löschen', finance_path(finance), method: :delete, id: "delete_post_#{finance.id}_from_index", data: { confirm: 'Bist Du sicher?' } %>
 	</td>
 </tr>

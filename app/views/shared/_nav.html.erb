@@ -1,24 +1,29 @@
 <div class='container'>
 	<% if current_user %>
 		<div class='logo'>
-			<h1 class='head-font-bold'>Sudetenlandweg</h1>
-			<p class='head-font-italic'>Sankt Andreasberg</p>
+			<h1 class='head-font-bold head-homepage'>Sudetenlandweg</h1>
+			<h3 class='head-font-italic head-homepage-small'>Sankt Andreasberg</h3>
 		</div>
 
 	<!-- TODO -->
 
 		<ul class="custom-nav nav nav-tabs">
 			<li class="<%= active?(root_path) %>">
-				<%= link_to "Home", posts_path %>
+				<%= link_to " ", posts_path , class: 'glyphicon glyphicon-home glyph-custom' %>
 			</li>
 			<li class="<%= active?(finances_path) %>">
-				<%= link_to "Finances", finances_path %>
+				<%= link_to "Rechnungen", finances_path %>
 			</li>
-			<li class="<%= active?( new_finance_path) %>">
-				<%= link_to "Add Gas and Electricity", new_finance_path, id: 'new_finance_from_nav' %>
-			</li>
-			<li class="<%= active?( new_post_path) %>">
-				<%= link_to "Add Post", new_post_path, id: 'new_post_from_nav' %>
+			<% if current_user.try(:type) == 'AdminUser' %>
+				<li class="<%= active?( new_finance_path) %>">
+					<%= link_to "Zählerstand Gas und Elektrizität", new_finance_path, id: 'new_finance_from_nav' %>
+				</li>
+				<li class="<%= active?( new_post_path) %>">
+					<%= link_to "Mitteilung hinzufügen", new_post_path, id: 'new_post_from_nav' %>
+				</li>
+			<% end %>
+			<li class="<%= active?( root_path) %>">
+				<%= link_to "Kontakt", root_path %>
 			</li>
 
 			<li class="dropdown pull-right">
