@@ -33,6 +33,9 @@ describe 'navigate'  do
 
 	describe 'Creation' do
 		before do
+			logout(:user)
+			admin_user = FactoryGirl.create(:admin_user)
+			login_as(admin_user, :scope => :user)
 			visit new_post_path
 		end
 		it 'has a new form that can be reached' do
@@ -42,7 +45,7 @@ describe 'navigate'  do
 		it 'can be created from new form page' do
 			fill_in 'post[title]', with: "Some title"
       fill_in 'post[description]', with: "Some description asdfasdfasdf"
-      click_on "Save"
+      click_on "Speichern"
 
       expect(page).to have_content("Some description")
 		end
