@@ -36,6 +36,9 @@ end
 
   root to: 'static#homepage'
 
+  get 'static/contact'
+
+  post 'static/thank_you'
 end
 
 

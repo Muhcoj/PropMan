@@ -1,0 +1,24 @@
+<div class="container background-main">
+  <h3 class="contact-form">Bei Fragen kontaktieren Sie mich bitte:</h3>
+  
+  <div class="#">
+    <%= form_tag("/static/thank_you") do %>
+      <div class="form-group">
+        <%= label_tag :name %>
+        <%= text_field_tag :name, nil, class: "form-control" %>
+      </div><!-- end .form-group --> 
+      <div class="form-group">
+        <%= label_tag :email, "E-Mail-Addresse" %>
+        <%= text_field_tag :email, nil, class: "form-control", required: "required"%>
+      </div><!-- end .form-group --> 
+      <div class="form-group">
+        <%= label_tag :message, "Nachricht" %>
+        <%= text_area_tag :message, nil, class: "form-control" %>
+      </div><!-- end .form-group --> 
+      <div class="form-group">
+        <%= submit_tag "Send", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+

@@ -34,7 +34,7 @@ class FinancesController < ApplicationController
 		@user = current_user  
   	@finance = Finance.find(params[:id])  #The culprit!  
 	  if user_signed_in?  
-	    UserMailer.invoice_reminder(current_user, @finance).deliver  
+	    UserMailer.invoice_reminder(@user, @finance).deliver  
 	    redirect_to posts_url, notice: 'Reminder has been sent.'  
 	  else  
 	  end 

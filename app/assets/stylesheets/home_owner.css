@@ -60,3 +60,15 @@
 .homeowner-invoice:hover {
 	background-color: #226d9d;
 }
+
+
+/*******CONTACT/THANK-YOU***********/ 
+
+.thank-you {
+	padding-top: 75px;
+}
+
+.contact-form {
+	margin-top: 50px;
+  margin-bottom: 25px;
+}
