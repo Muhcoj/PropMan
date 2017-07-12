@@ -7,9 +7,31 @@
 		</div>
 
 		<div id='home-owner'  class='col-md-3 column   home-owner'>
-			<h3>Offene Rechnung(en)</h3>
+			<h3>Offene Beiträge</h3>
 			<hr>
 			<%= render partial: 'homeowner_open_invoices', locals: { homeowner_open_invoices: @homeowner_open_invoice } %>
 		</div>
+
+		<div class="col-md-3 pull-right home-owner-pdf">
+			<h3 id="modal-header-homeowner">Niederschrift 2016</h3>	
+			<hr>
+				
+			<button id="button-modal" class="btn btn-primary modal-btn glyphicon glyphicon-file" data-toggle="modal" data-target=".bs-example-modal-lg"></button> 
+				
+			<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="false"  >
+			  <div class="modal-dialog modal-lg">
+			    <div class="modal-content">
+			    	<div class="modal-header">
+			    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						   <h4 class="modal-title" id="myModalLabel">Niederschrift 2016</h4>
+						</div>
+						<div class="modal-body">
+						   <embed id="#" src="/Niederschrift2016.pdf" width="100%" height="500" frameborder="0" allowfullscreen="">
+						</div>
+			    </div>
+			  </div>
+			</div>
+		</div>
+
 	</div>
 </div>

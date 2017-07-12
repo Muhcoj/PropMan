@@ -1,5 +1,9 @@
 .home-owner {
-	margin: 40px 20px;
+	margin: 40px 20px 0 20px;
+}
+
+.home-owner-pdf {
+	margin: 0 30px 50px 20px;
 }
 
 #home-owner {
