@@ -3,7 +3,11 @@ class FinancesController < ApplicationController
 	before_action :set_finance, only: [:show, :edit, :update, :destroy, :paid]
 
 	def index
-		@finances = Finance.finances_by(current_user).page(params[:page]).per(8)
+		if admin_types.include?(current_user.type)
+			@admin_finance = Finance.all
+		else
+			@finances = Finance.finances_by(current_user).page(params[:page]).per(8)
+		end
 	end
 
 	def paid
@@ -31,7 +35,7 @@ class FinancesController < ApplicationController
 	end
 
 	def send_invoice_reminder
-		@user = current_user  
+		@user = current_user 
   	@finance = Finance.find(params[:id])  #The culprit!  
 	  if user_signed_in?  
 	    UserMailer.invoice_reminder(@user, @finance).deliver  
@@ -57,6 +61,7 @@ class FinancesController < ApplicationController
 
 
 	def show
+		authorize @finance
 	end
 
 	def destroy
