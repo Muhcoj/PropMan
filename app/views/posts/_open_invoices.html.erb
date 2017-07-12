@@ -13,11 +13,13 @@
 		<div class='row'>
 			<div class='col-md-6 column'>
 				<!-- TODO LINK MAILING -->
-				<%= link_to 'Erinnerung',  send_invoice_reminder_finance_path(open_invoice.user.email), class: 'btn btn-warning btn-block' %>
+				<%= link_to 'Erinnerung',  send_invoice_reminder_finance_path(open_invoice), class: 'btn btn-warning btn-block' %>
 				<!-- TODO LINK MAILING -->
 			</div>
 			<div class='col-md-6 column'>
+				<!-- TODO LINK MAILING -->
 				<%= link_to 'Bezahlt', paid_finance_path(open_invoice), class: 'btn btn-success btn-block', id: "paid_#{open_invoice.id}" %>
+				<!-- TODO LINK MAILING -->
 			</div>
 		</div>
 	</div>

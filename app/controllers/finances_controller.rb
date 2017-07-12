@@ -13,7 +13,13 @@ class FinancesController < ApplicationController
 	def paid
 		authorize @finance
 		@finance.paid!
-		redirect_to posts_url, notice: "The payment has been approved"
+		@finance = Finance.find(params[:id])
+		@user = @finance.user(params[:id])
+	  if user_signed_in?  
+	    UserMailer.invoice_paid(@user, @finance).deliver  
+	    redirect_to posts_url, notice: "The payment has been approved"  
+	  else  
+	  end
 	end
 
 
@@ -23,11 +29,13 @@ class FinancesController < ApplicationController
 
 	def create
 		@finance = Finance.new(finance_params)
-		@finance.user_id = current_user.id
-    @user = current_user
+		# @finance.user_id = current_user.id
+  #   @user = current_user
+
+		@user = @finance.user(params[:id])
 
     if @finance.save
-    	redirect_to @finance, notice: 'Your post was created successfully'
+    	redirect_to @finance, notice: 'Your invoice was created successfully'
     	UserMailer.new_invoice(@user, @finance).deliver
     else
     	render :new
@@ -35,8 +43,8 @@ class FinancesController < ApplicationController
 	end
 
 	def send_invoice_reminder
-		@user = current_user 
-  	@finance = Finance.find(params[:id])  #The culprit!  
+		@finance = Finance.find(params[:id])
+		@user = @finance.user(params[:id])
 	  if user_signed_in?  
 	    UserMailer.invoice_reminder(@user, @finance).deliver  
 	    redirect_to posts_url, notice: 'Reminder has been sent.'  
