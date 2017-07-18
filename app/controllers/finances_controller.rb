@@ -29,9 +29,6 @@ class FinancesController < ApplicationController
 
 	def create
 		@finance = Finance.new(finance_params)
-		# @finance.user_id = current_user.id
-  #   @user = current_user
-
 		@user = @finance.user(params[:id])
 
     if @finance.save
@@ -80,7 +77,7 @@ class FinancesController < ApplicationController
 	private
 
 		def finance_params
-			params.require(:finance).permit(:year, :month, :payment_due, :status)
+			params.require(:finance).permit(:year, :month, :payment_due, :user_id, :status)
 		end
 
 		def set_finance
