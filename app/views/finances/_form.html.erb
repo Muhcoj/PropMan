@@ -7,7 +7,7 @@
   <% end %>
 
 	<div class="form-group">
-		<%= collection_select( :finance, :user_id, User.all, :id, :last_name, {}, { :multiple => false } ) %>
+		<%= collection_select( :finance, :user_id, User.all, :id, :last_name, { :multiple => false } ) %>
 	</div>
 
 
