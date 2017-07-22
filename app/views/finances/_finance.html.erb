@@ -1,9 +1,6 @@
 <tr>
 	<td>
-		<%= finance.year %>
-	</td>
-	<td>
-		<%= finance.month %>
+		<%= finance.date.strftime("%d-%m-%Y") %>
 	</td>
 	<td class='custom-link'>
 		<%= link_to "€ #{finance.payment_due}", finance %>

@@ -4,7 +4,7 @@ describe 'navigate' do
 	let(:user) { FactoryGirl.create(:user) }
 
 	let(:finance) do 
-		Finance.create(year: "2016", month: "February", payment_due: 48.50, user_id: user.id)
+		Finance.create( date: Date.today, payment_due: 48.50, user_id: user.id)
 	end
 
 	before do
@@ -35,7 +35,7 @@ describe 'navigate' do
 		it 'has a scope so that only finance creators can see their finances' do
     	other_user = User.create(first_name: "Non", last_name: "Authorized", email: "test.test.com", password: "asdfasdf", password_confirmation: "asdfasdf" )
 			
-			finance_from_other_user = Finance.create(year: "2017", month: "December", payment_due: 48.50, user_id: other_user.id )
+			finance_from_other_user = Finance.create( date: Date.today, payment_due: 48.50, user_id: other_user.id )
 
 			visit finances_path
 			
@@ -61,7 +61,7 @@ describe 'navigate' do
 			delete_user = FactoryGirl.create(:user)
 			login_as(delete_user, :scope => :user)
 
-			finance_to_delete = Finance.create(year: "2017", month: "December", payment_due: 48.50, user_id: delete_user.id )
+			finance_to_delete = Finance.create( date: Date.today, payment_due: 48.50, user_id: delete_user.id )
 
 			visit finances_path
 

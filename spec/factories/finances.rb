@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :finance do
-    year "2017"
-    month "January"
+    date Date.today
     payment_due 40.50
     #gas 12345,63
     #water 65432,13
@@ -10,8 +9,7 @@ FactoryGirl.define do
   end
 
   factory :second_finance, class: "Finance" do
-    year "2016"
-    month "February"
+    date Date.yesterday
     payment_due 48.50
     # gas 65432,1
     # water 12345,7
@@ -21,8 +19,7 @@ FactoryGirl.define do
   end
 
   factory :finance_from_other_user, class: "Finance" do
-    year "2016"
-    month "February"
+    date Date.tomorrow
     payment_due 48.50
     # gas 65432,1
     # water 12345,7
