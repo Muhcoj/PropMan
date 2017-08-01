@@ -7,12 +7,18 @@
   <% end %>
 
   <div class="form-group">
-		<%= collection_select( :finance, :user_id, User.all, :id, :last_name, { :multiple => false } ) %>
+  	<%= f.label :user, class: "col-sm-2 control-label" %><br>
+  	<div class="">
+			<%= collection_select( :finance, :user_id, User.all, :id, :last_name, { :multiple => false },
+           { :class => "form-control" }) %>
+		</div>
 	</div>
 
   <div class="form-group">
 		<%= f.label :date, class: "col-sm-2 control-label" %><br>
-		<%= f.date_select :date, class: "form-control" %>
+		<div class="">
+			<%= f.date_select :date, { :class => "form-control" } %> <!-- TODO style date from -->
+		</div>
 	</div>
 
 
