@@ -29,7 +29,7 @@ describe 'navigate' do
 			finance2 = FactoryGirl.create(:second_finance, user_id: user.id) #FactoryGirl factories need to be instantiated and need to have the user_if manually defined.
 			#finance2.update!(user_id: @user.id)
 			visit finances_path
-			expect(page).to have_content(/January|February/)
+			expect(page).to have_content(/48.5/)
 		end
 
 		it 'has a scope so that only finance creators can see their finances' do

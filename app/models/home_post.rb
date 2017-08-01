@@ -1,0 +1,2 @@
+class HomePost < Post
+end
