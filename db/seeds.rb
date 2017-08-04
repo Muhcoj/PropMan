@@ -18,3 +18,9 @@ puts "20 Posts have been created"
 end
 
 puts "20 Finances have been created"
+
+5.times do |homepost|
+  HomePost.create!(title: 'Mitteilung Titel', date: Date.today, description: "Textbeispiele hier schreiben bitte asdfasdfa sdfasdfasdf asdfa")
+end
+
+puts "5 HomePosts have been created"

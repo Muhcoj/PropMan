@@ -14,19 +14,21 @@ Rails.application.routes.draw do
     delete 'logout', to: 'static#homepage'
   end
 
+
   resources :posts
+  resources :home_posts
   resources :finances do 
     member do
       get :paid
     end
   end
 
-resources :finances do
-  resources :users    
-  member do  
-    get 'send_invoice_reminder' => 'finances#send_invoice_reminder'  
-  end  
-end 
+  resources :finances do
+    resources :users    
+    member do  
+      get 'send_invoice_reminder' => 'finances#send_invoice_reminder'  
+    end  
+  end 
 
   devise_for :users, skip: [:registrations]
 
