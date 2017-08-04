@@ -11,9 +11,8 @@ RSpec.describe Finance, type: :model do
   		expect(@finance).to be_valid
   	end
 
-  	it "cannot be created without a year, month and payment_due" do
-  		@finance.year = nil
-  		@finance.month = nil
+  	it "cannot be created without a date payment_due" do
+  		@finance.date = nil
   		@finance.payment_due = nil
   		expect(@finance).to_not be_valid
   	end
