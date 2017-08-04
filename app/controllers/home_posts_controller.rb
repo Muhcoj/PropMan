@@ -2,6 +2,7 @@ class HomePostsController < ApplicationController
 	before_action :set_post, only: [:show]
 
 	def index
+		@home_posts = HomePost.all
 	end
 
 	def new

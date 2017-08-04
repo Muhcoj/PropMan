@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
-  def homepage  
+  def homepage
+  	@home_posts = HomePost.all  
   end
 
   def thank_you

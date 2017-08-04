@@ -6,6 +6,13 @@ describe 'navigate' do
       visit home_posts_path
       expect(page.status_code).to eq(200)
     end
+
+    it 'has a list of posts' do
+			homepost1 = HomePost.create(title: "Some Title", date: Date.today, description: "Some description post1")
+			homepost2 = HomePost.create(title: "Some Title", date: Date.today, description: "Some description post2")
+			visit root_path
+			expect(page).to have_content(/post1|post2/)
+		end
   end
 
   describe 'Creation' do
