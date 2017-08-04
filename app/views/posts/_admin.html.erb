@@ -3,7 +3,7 @@
 		<div id='home-owner' class='col-md-8 column home-owner'>
 			<h3>Mitteilungen</h3>
 			<hr>
-			<%= render @posts %>
+			<%= render partial: "posts/post", collection: @posts, as: :post %> <!-- When rendering parts of database when related by STI, be specific as shown left. -->
 		</div>
 
 		<div id='home-owner'  class='col-md-3 column home-owner'>
