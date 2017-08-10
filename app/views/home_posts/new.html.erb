@@ -1,11 +1,30 @@
-<h1>New HomePost</h1>
+<div class='container background-main'>	
+	<h3>Home Page Mitteilung | <%= link_to "Neue Mitteilung", new_post_path %></h3>
 
-<%= form_for @home_post do |f| %>
+	<%= form_for @home_post, class: "form-horizontal" do |f| %>
 
-	<%= f.text_field :title %>
-  <%= f.date_field :date %>
-  <%= f.text_area :description %>
+	  <% if @home_post.errors.any? %>
+	    <% @home_post.errors.full_messages.each do |error| %>
+	      <%= js add_gritter(error, title: "Property Management App Notification", sticky: false) %>
+	    <% end %>
+	  <% end %>
 
-  <%= f.submit 'Speichern' %>
+		<div class="form-group">
+			<%= f.label :title, class: "col-sm-2 control-label" %>
+			<%= f.text_field :title, class: "form-control" %>
+		</div>
 
-<% end %>
+		<div class="form-group">
+			<%= f.label :date, class: "col-sm-2 control-label" %>
+			<%= f.date_field :date, class: "form-control" %>
+		</div>
+
+		<div class="form-group">
+			<%= f.label :description, class: "col-sm-2 control-label" %>
+			<%= f.text_area :description, class: "form-control" %>
+		</div>
+
+	  <%= f.submit 'Speichern', class: "btn btn-primary btn-block" %>
+
+	<%end %>
+</div>

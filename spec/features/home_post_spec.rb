@@ -15,6 +15,17 @@ describe 'navigate' do
 		end
   end
 
+  describe 'new' do 
+		it 'has a link to the new form' do
+			admin_user = FactoryGirl.create(:admin_user)
+			login_as(admin_user, :scope => :user)
+			visit new_post_path
+
+			click_link('new_home_post')
+			expect(page.status_code).to eq(200)
+		end
+	end
+
   describe 'Creation' do
 		before do
 			admin_user = FactoryGirl.create(:admin_user)

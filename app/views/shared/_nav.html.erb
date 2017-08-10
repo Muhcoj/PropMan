@@ -1,4 +1,4 @@
-<div class='container'>
+<div role="navigation" class='container'>
 	<% if current_user %>
 		<div class='logo'>
 			<h1 class='head-font-bold head-homepage'>Sudetenlandweg</h1>
@@ -16,7 +16,7 @@
 			</li>
 			<% if current_user.try(:type) == 'AdminUser' %>
 				<li class="<%= active?( new_finance_path) %>">
-					<%= link_to "Zählerstand Gas und Elektrizität", new_finance_path, id: 'new_finance_from_nav' %>
+					<%= link_to "Neue Rechnung erstellen", new_finance_path, id: 'new_finance_from_nav' %>
 				</li>
 				<li class="<%= active?( new_post_path) %>">
 					<%= link_to "Mitteilung hinzufügen", new_post_path, id: 'new_post_from_nav' %>
