@@ -1,4 +1,4 @@
-<%= link_to post_url(post) do %>
+<%= link_to post_url(post), :class => "post-admin" do %>
 	<div class='col-md-5 post'>
 		<h3>
 			<%= post.title %>
@@ -8,6 +8,11 @@
 		<p>
 			<%= post.description.truncate(45) %>
 		</p>
+		<% if current_user.try(:type) == 'AdminUser' %>
+			<p>
+				<%= link_to 'Edit', edit_post_path(post), :class => "post-admin" %>
+			</p>
+		<% end %>
 	</div>
 <% end %>
 

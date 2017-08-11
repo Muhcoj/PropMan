@@ -1,5 +1,5 @@
 .home-owner {
-	margin: 40px 20px 0 20px;
+	margin: 0 20px 0 20px;
 }
 
 .home-owner-pdf {
@@ -65,6 +65,13 @@
 	background-color: #226d9d;
 }
 
+.post-admin {
+	color: white;
+}
+
+.post-admin:hover {
+	color: white;
+}
 
 /*******CONTACT/THANK-YOU***********/ 
 
@@ -73,6 +80,5 @@
 }
 
 .contact-form {
-	margin-top: 50px;
   margin-bottom: 25px;
 }

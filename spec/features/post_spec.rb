@@ -31,6 +31,8 @@ describe 'navigate'  do
 	# 	end
 	# end
 
+
+
 	describe 'Creation' do
 		before do
 			logout(:user)
@@ -38,6 +40,7 @@ describe 'navigate'  do
 			login_as(admin_user, :scope => :user)
 			visit new_post_path
 		end
+
 		it 'has a new form that can be reached' do
 			expect(page.status_code).to eq(200)
 		end
@@ -48,6 +51,23 @@ describe 'navigate'  do
       click_on "Speichern"
 
       expect(page).to have_content("Some description")
+		end
+	end
+
+	describe 'Edit' do
+		before do
+			logout(:user)
+			admin_user = FactoryGirl.create(:admin_user)
+			login_as(admin_user, :scope => :user)
+			visit new_post_path
+		end
+
+		it 'can be reached by clicking edit on index page' do
+			post = FactoryGirl.create(:post)
+			visit posts_path
+
+			click_link 'Edit'
+			expect(page.status_code).to eq(200)
 		end
 	end
 end 
