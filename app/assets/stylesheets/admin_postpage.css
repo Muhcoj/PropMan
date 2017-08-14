@@ -25,3 +25,7 @@
 .invoice:hover {
 	background-color: #226d9d;
 }
+
+.logo {
+	margin: 42px 0;
+}

@@ -1,12 +1,18 @@
-<%= @home_posts.each do |home_post|%>
+<% @home_posts.each do |home_post|%>
 	<div class=''>
 		<h3>
 			<%= home_post.title %>
 		</h3>
-		<hr>
 		<p id='post-date'><i><%= home_post.date %></i></p>
 		<p>
 			<%= home_post.description.truncate(45) %>
 		</p>
-	</div>	
+	</div>
+	<% if current_user.try(:type) == 'AdminUser' %>
+		<p>
+			<%= link_to 'Edit', edit_home_post_path(home_post), :class => "" %>
+		</p>
+	<% end %>
+	<hr>
+	<br>	
 <% end %>

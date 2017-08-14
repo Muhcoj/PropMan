@@ -22,6 +22,10 @@ body {
 	min-height: 100vw;
 }
 
+.homepage-logo {
+  margin: 42px 0;
+}
+
 .head-font-bold {
 	font-style: bold;
 	font-family: 'Montserrat', sans-serif;
@@ -140,7 +144,7 @@ a:hover {
 }
 
 .home-signin {
-	margin-top: 50px;
+	margin-top: 62px;
 	margin-right: 50px;
 }
 
@@ -185,10 +189,26 @@ a:hover {
 
 /***********HOME PAGE**********/
 
+.row-cards   {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.card-custom {
+  float: left;
+  width: 33.333%;
+  padding: .75rem;
+  margin-bottom: 2rem;
+  border: 0;
+}
 
 .head-homepage {
 	font-size: 4.3em;
   margin-bottom: 0; 
+  margin-top: 0;
 }
 
 .head-homepage-small {
@@ -213,12 +233,16 @@ a:hover {
 }
 
 .homepage-clear {
-  margin-bottom: 300px;  
+  margin-bottom: 100px;  
 }
 
 .image-small {
   width: 80%;
   margin-left: 10%;
+}
+
+.homepage-nav-fix {
+  margin-top: -30px;
 }
 
 /**********MODAL********/
@@ -334,8 +358,12 @@ a:hover {
   left: 0;
   padding: 1rem;
   background-color: rgba(51, 122, 183, 1);
-  min-height: 70px;
+  min-height: 42px;
 
+}
+
+.footer-signin {
+  text-align: right;
 }
 
 

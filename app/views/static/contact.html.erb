@@ -4,19 +4,19 @@
   <div class="#">
     <%= form_tag("/static/thank_you") do %>
       <div class="form-group">
-        <%= label_tag :name %>
+        <%= label_tag :name, "Name", class: "col-sm-2 control-label"  %>
         <%= text_field_tag :name, nil, class: "form-control" %>
       </div><!-- end .form-group --> 
       <div class="form-group">
-        <%= label_tag :email, "E-Mail-Addresse" %>
+        <%= label_tag :email, "E-Mail-Addresse", class: "col-sm-2 control-label"  %>
         <%= text_field_tag :email, nil, class: "form-control", required: "required"%>
       </div><!-- end .form-group --> 
       <div class="form-group">
-        <%= label_tag :message, "Nachricht" %>
+        <%= label_tag :message, "Nachricht", class: "col-sm-2 control-label"  %>
         <%= text_area_tag :message, nil, class: "form-control" %>
       </div><!-- end .form-group --> 
       <div class="form-group">
-        <%= submit_tag "Send", class: "btn btn-primary" %>
+        <%= submit_tag "Senden", class: "btn btn-primary btn-block" %>
       </div>
     <% end %>
   </div>
