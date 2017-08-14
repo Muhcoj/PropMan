@@ -17,11 +17,14 @@ class UserDashboard < Administrate::BaseDashboard
     last_sign_in_at: Field::DateTime.with_options(searchable: false),
     current_sign_in_ip: Field::String.with_options(searchable: false),
     last_sign_in_ip: Field::String.with_options(searchable: false),
-    first_name: Field::String.with_options(searchable: false),
-    last_name: Field::String.with_options(searchable: false),
+    first_name: Field::String.with_options(searchable: true),
+    last_name: Field::String.with_options(searchable: true),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
     type: Field::String.with_options(searchable: false),
+    flatnumber: Field::Number.with_options(searchable: false),
+    flatsize: Field::Number.with_options(searchable: false),
+    co_ownership: Field::Number.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -51,6 +54,9 @@ class UserDashboard < Administrate::BaseDashboard
     :type,
     :created_at,
     :updated_at,
+    :flatnumber,
+    :flatsize,
+    :co_ownership,
     :type,
   ].freeze
 
@@ -62,6 +68,9 @@ class UserDashboard < Administrate::BaseDashboard
     :password,
     :first_name,
     :last_name,
+    :flatnumber,
+    :flatsize,
+    :co_ownership,
     :type,
   ].freeze
 

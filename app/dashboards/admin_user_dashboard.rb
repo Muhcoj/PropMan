@@ -22,6 +22,9 @@ class AdminUserDashboard < Administrate::BaseDashboard
     type: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
+    flatnumber: Field::Number.with_options(searchable: false),
+    flatsize: Field::Number.with_options(searchable: false),
+    co_ownership: Field::Number.with_options(searchable: false),
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -49,6 +52,9 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :first_name,
     :last_name,
     :type,
+    :flatnumber,
+    :flatsize,
+    :co_ownership,
     :created_at,
     :updated_at,
   ].freeze
@@ -61,6 +67,9 @@ class AdminUserDashboard < Administrate::BaseDashboard
     :password,
     :first_name,
     :last_name,
+    :flatnumber,
+    :flatsize,
+    :co_ownership,
     :type,
   ].freeze
 
