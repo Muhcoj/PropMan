@@ -45,20 +45,19 @@ describe 'navigate' do
 		end
 	end
 
-	# describe 'Edit' do
-	# 	before do
-	# 		logout(:user)
-	# 		admin_user = FactoryGirl.create(:admin_user)
-	# 		login_as(admin_user, :scope => :user)
-	# 		visit new_post_path
-	# 	end
+	describe 'Edit' do
+		before do
+			# logout(:user)
+			admin_user = FactoryGirl.create(:admin_user)
+			login_as(admin_user, :scope => :user)
+		end
 
-	# 	it 'can be reached by clicking edit on index page' do
-	# 		post = FactoryGirl.create(:post)
-	# 		visit posts_path
+		it 'can be reached by clicking edit on homepage when admin is loged in' do
+			@post = FactoryGirl.create(:home_post)
+			visit root_path
 
-	# 		click_link 'Edit'
-	# 		expect(page.status_code).to eq(200)
-	# 	end
-	# end
+			click_link "edit_#{@post.id}"
+			expect(page.status_code).to eq(200)
+		end
+	end
 end

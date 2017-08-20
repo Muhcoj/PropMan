@@ -100,11 +100,12 @@ describe 'navigate' do
 
 	describe 'edit' do
 		it 'can be edited' do
+			admin_user = FactoryGirl.create(:admin_user)
+			login_as(admin_user, :scope => :user)
 			visit edit_finance_path(finance)
 
-			fill_in 'finance[gas]', with: 12345.63
-      fill_in 'finance[water]', with: 12345.63
-      fill_in 'finance[electricity]', with: 12345.63
+			fill_in 'finance[date]', with: Date.today
+      fill_in 'finance[payment_due]', with: 45.68
       click_on "Save"
 
       expect(page).to have_content("open")

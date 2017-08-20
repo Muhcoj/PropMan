@@ -1,5 +1,5 @@
 class HomePostsController < ApplicationController
-	before_action :set_post, only: [:show]
+	before_action :set_post, only: [:show, :edit]
 
 	def index
 		@home_posts = HomePost.all
@@ -17,6 +17,14 @@ class HomePostsController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def edit	
+	end
+
+	def update
+  	@home_post.update(home_post_params)
+  	redirect_to @home_post, notice: 'Your post was updated successfully'
 	end
 
 	def show

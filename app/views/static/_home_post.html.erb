@@ -10,7 +10,7 @@
 	</div>
 	<% if current_user.try(:type) == 'AdminUser' %>
 		<p>
-			<%= link_to 'Edit', edit_home_post_path(home_post), :class => "" %>
+			<%= link_to 'Edit', edit_home_post_path(home_post), :class => "", id: "edit_#{home_post.id}" %>
 		</p>
 	<% end %>
 	<hr>

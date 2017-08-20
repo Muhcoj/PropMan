@@ -1,0 +1,26 @@
+<%= form_for @home_post, class: "form-horizontal" do |f| %>
+
+  <% if @home_post.errors.any? %>
+    <% @home_post.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, title: "Property Management App Notification", sticky: false) %>
+    <% end %>
+  <% end %>
+
+	<div class="form-group">
+		<%= f.label :title, class: "col-sm-2 control-label" %>
+		<%= f.text_field :title, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :date, class: "col-sm-2 control-label" %>
+		<%= f.date_field :date, class: "form-control" %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :description, class: "col-sm-2 control-label" %>
+		<%= f.text_area :description, class: "form-control" %>
+	</div>
+
+  <%= f.submit 'Speichern', class: "btn btn-primary btn-block" %>
+
+<%end %>
