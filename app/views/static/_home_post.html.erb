@@ -1,9 +1,9 @@
 <% @home_posts.each do |home_post|%>
-	<div class=''>
+	<div >
 		<h3>
 			<%= home_post.title %>
 		</h3>
-		<p id='post-date'><i><%= home_post.date %></i></p>
+		<p class='text-muted' id='post-date'><i><%= home_post.date %></i></p>
 		<p>
 			<%= home_post.description.truncate(45) %>
 		</p>
