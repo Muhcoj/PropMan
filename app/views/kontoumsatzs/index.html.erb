@@ -1,0 +1,49 @@
+<div class="container background-main ">
+
+  <h3 class='#'>Kontoumsatzs</h3><br>
+
+  <table class="table table-striped table-hover table-details">
+    <thead>
+      <tr>
+        <th>Weg</th>
+        <th>Wertstellung</th>
+        <th>Umsatzart</th>
+        <th>Buchungsdetails</th>
+        <th>Auftraggeber</th>
+        <th>Empfaenger</th>
+        <th>Betrag</th>
+        <th>Saldo</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @kontoumsatzs.each do |kontoumsatz| %>
+        <tr>
+          <td><%= kontoumsatz.weg %></td>
+          <td><%= kontoumsatz.wertstellung %></td>
+          <td><%= kontoumsatz.umsatzart %></td>
+          <td><%= kontoumsatz.buchungsdetails %></td>
+          <td><%= kontoumsatz.auftraggeber %></td>
+          <td><%= kontoumsatz.empfaenger %></td>
+          <td><%= kontoumsatz.betrag %></td>
+          <td><%= kontoumsatz.saldo %></td>
+          <td><%= link_to 'Show', kontoumsatz %></td>
+          <td><%= link_to 'Edit', edit_kontoumsatz_path(kontoumsatz) %></td>
+          <td><%= link_to 'Destroy', kontoumsatz, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Kontoumsatz', new_kontoumsatz_path %><br>
+  
+  <h3>Import</h3>
+  <%= form_tag import_kontoumsatzs_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import Datei" %>
+  <% end %>
+
+</div>

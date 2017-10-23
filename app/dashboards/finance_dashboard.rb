@@ -10,11 +10,7 @@ class FinanceDashboard < Administrate::BaseDashboard
   ATTRIBUTE_TYPES = {
     user: Field::BelongsTo.with_options(searchable: false),
     id: Field::Number.with_options(searchable: false),
-    year: Field::String.with_options(searchable: true),
-    month: Field::String.with_options(searchable: true),
-    gas: Field::String.with_options(searchable: false),
-    water: Field::String.with_options(searchable: false),
-    electricity: Field::String.with_options(searchable: false),
+    date: Field::DateTime.with_options(searchable: false),
     payment_due: Field::String.with_options(searchable: false),
     created_at: Field::DateTime.with_options(searchable: false),
     updated_at: Field::DateTime.with_options(searchable: false),
@@ -29,8 +25,7 @@ class FinanceDashboard < Administrate::BaseDashboard
   COLLECTION_ATTRIBUTES = [
     :user,
     :status,
-    :year,
-    :month,
+    :date,
     :payment_due,
   ].freeze
 
@@ -40,11 +35,7 @@ class FinanceDashboard < Administrate::BaseDashboard
     :user,
     :status,
     :id,
-    :year,
-    :month,
-    :gas,
-    :water,
-    :electricity,
+    :date,
     :payment_due,
     :created_at,
     :updated_at,
@@ -56,11 +47,7 @@ class FinanceDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :user,
     :status,
-    :year,
-    :month,
-    :gas,
-    :water,
-    :electricity,
+    :date,
     :payment_due,
   ].freeze
 

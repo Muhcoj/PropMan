@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
   default_url_options :host => 'localhost', port: 3000
+
+  resources :kontoumsatzs do 
+    collection { post :import }
+  end
   
   namespace :admin do
     resources :users

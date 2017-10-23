@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814171734) do
+ActiveRecord::Schema.define(version: 20171023133234) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,19 @@ ActiveRecord::Schema.define(version: 20170814171734) do
     t.integer  "status",                              default: 0
     t.date     "date"
     t.index ["user_id"], name: "index_finances_on_user_id", using: :btree
+  end
+
+  create_table "kontoumsatzs", force: :cascade do |t|
+    t.integer  "weg"
+    t.string   "wertstellung"
+    t.string   "umsatzart"
+    t.string   "buchungsdetails"
+    t.string   "auftraggeber"
+    t.string   "empfaenger"
+    t.decimal  "betrag"
+    t.decimal  "saldo"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "posts", force: :cascade do |t|

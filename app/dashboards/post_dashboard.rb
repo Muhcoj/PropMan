@@ -48,7 +48,6 @@ class PostDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = [
     :title,
     :date,
-    :image,
     :description,
   ].freeze
 

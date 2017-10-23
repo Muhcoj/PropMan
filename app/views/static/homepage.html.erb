@@ -1,108 +1,108 @@
-<div class="container homepage-nav-fix">
-	
-	<% if !user_signed_in? %>
-		<div class="row">	
-			<div class="col-md-8">
-				<div class="homepage-logo">
-					<h1 class='head-font-bold head-homepage'>Sankt Andreasberg</h1>
-					<h3 class='head-font-italic head-homepage-small'>Braunlage</h3>
-				</div>
-			</div>
-			<div class="col-md-4">
-				<div>
-					<%= link_to 'Sign In', user_session_path, class: "btn btn-primary pull-right home-signin " %>
-				</div>
-			</div>
-		</div>
-	<% end %>
+<div id="wrapper">
+            <div id="columns">
+                <div class="pin blue">
+                    <div class="text-wrap">
+                        <blockquote>"Wenn du wissen willst, wer dich beherrscht, mußt du nur herausfinden, wen du nicht kritisieren darfst."</blockquote>
+                        <p>Voltaire, französischer Philosoph</p>
+                    </div>
+                </div>
 
+                <div class="pin green">
+                    <div class="text-wrap">
+                        <blockquote>"For every minute you're angry you lose sixty seconds of happiness."</blockquote>
+                        <p>Ralph Waldo Emerson, US-amerikanischer Philosoph</p>
+                    </div>
+                </div>
 
-	<div class="row row-cards">
-		<div class="card card-custom">
-	    <img class="img-responsive" style="height: 280px; width: 100%; display: block;" src="/assets/woods.jpg" data-holder-rendered="true">
-	    <!-- TODO implement imag_tag. -->
-	    <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-	  </div>
-		<div class="card card-custom">
-	    <img class="img-responsive" style="height: 280px; width: 100%; display: block;" src="/assets/garbage.jpg" data-holder-rendered="true">
-	   <!--  <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-	  </div>
-		<div class="card card-custom">
-	    <img class="img-responsive" style="height: 280px; width: 100%; display: block;" src="/assets/snow.jpg" data-holder-rendered="true">
-	    <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
-	  </div>
-	</div>
+                <div class="pin purple">
+                    <div class="text-wrap">
+                        <blockquote>"Bildung ist das, was übrigbleibt, wenn man alles vergessen hat, was man in der Schule lernte."</blockquote>
+                        <p>Richard David Precht, deutscher Philosoph und Publizist</p>
+                    </div>
+                </div>
 
+                <div class="pin orange">
+                    <div class="text-wrap">
+                        <blockquote>"Die meisten Menschen jagen so sehr dem Genuss nach, dass sie an ihm vorbeilaufen."</blockquote>
+                        <p>Søren Aabye Kierkegaard, dänischer Philosoph und Theologe</p>
+                    </div>
+                </div>
 
-	<div class="row">
-		<div class="col-md-3">
-			<h4 class='head-font-bold header-details-grey'>
-				Sankt Andreasberg, Braunlage
-			</h4>
-			<p class="text-muted">
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod <a href='http://www.stadt-braunlage.com/' target="_blank">website Sankt Andreasberg</a> et feugiat ipsum consequat eu.</small>
-			</p>
-			<!-- <img class='image-small' alt="Bootstrap Image Preview" src="http://lorempixel.com/140/140/" /> -->
-			<%=image_tag ("muell.jpg") %>
-		</div>
-		<div class="col-md-6">	
-			<div class=''>
-				<h2 class='head-font-bold header-details-blue'>Was ist los?</h3>
+                <div class="pin yellow">
+                    <div class="text-wrap">
+                        <blockquote>"Die Fesseln der Gewohnheit sind meist so fein, dass man sie gar nicht spürt. Doch wenn man sie dann spürt, sind sie schon so stark, dass sie sich nicht mehr zerreißen lassen."</blockquote>
+                        <p>Samuel Johnson, englischer Gelehrter, Lexikograf, Schriftsteller, Dichter und Kritiker</p>
+                    </div>
+                </div>
 
-				<%= render partial: 'home_post', locals: {home_posts: @home_post} %>
+                <div class="pin red">
+                    <div class="text-wrap">
+                        <blockquote>"Jeder dumme Junge kann einen Käfer zertreten. Aber alle Professoren der Welt können keinen herstellen."</blockquote>
+                        <p>Arthur Schopenhauer, deutscher Philosoph</p>
+                    </div>
+                </div>
 
-				 <!-- When rendering parts of database when related by STI, be specific as shown left. -->
-			</div>
-		</div>
-		<div class="col-md-3">
-			<h4 class='head-font-bold header-details-grey'>
-				Side Text
-			</h4>
-			<p class="text-muted">
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-			</p>
-			
+                <div class="pin blue">
+                    <div class="text-wrap">
+                        <blockquote>"Wer den Hafen nicht kennt, in den er segeln will, für den ist kein Wind ein günstiger."</blockquote>
+                        <p>Lucius Annaeus Seneca, römischer Philosoph und Dramatiker</p>
+                    </div>
+                </div>
 
-			<h4 class='head-font-bold header-details-grey'>Amtliche Bekanntmachungen</h4>
-			<p class="text-muted">Glossier distillery activated charcoal hot chicken, velit master cleanse copper mug meditation cloud bread brooklyn retro. Farm-to-table crucifix ut, meggings wolf franzen neutra iPhone skateboard brunch ullamco tumeric bushwick etsy waistcoat. Craft beer stumptown literally austin chia, photo booth shoreditch chartreuse edison bulb tacos vape occaecat tofu.  </p>
-			
+                <div class="pin orange">
+                    <div class="text-wrap">
+                        <blockquote>"Nicht weil es so schwer ist wagen wir es nicht, sondern weil wir es nicht wagen, ist es so schwer."</blockquote>
+                        <p>Lucius Annaeus Seneca, römischer Philosoph und Staatsmann</p>
+                    </div>
+                </div>
 
-			<!-- <button type="button" class="btn btn-info btn-block modal-btn glyphicon glyphicon-file"> </button> -->
-		</div>
-	</div>
-			
-	<div class="row homepage-clear">
-		<div class="col-md-3">
-			<h4 class='head-font-bold header-details-grey'>
-				Müllabfuhr
-			</h4>
-			<p class="text-muted">
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam <a href='https://www.landkreis-goslar.de/index.phtml?&sNavID=1749.146&object=tx,1749.13&ModID=10&FID=62.356.1&kat=&ort=0&call=0&sfwort=0&La=1' target="_blank">website sperrmüllabfuhr</a> sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non <a href='https://www.landkreis-goslar.de/media/custom/94_3213_1.PDF?1481182791' target="_blank">website Müllabfuhr</a> et, pharetra in dolor. Sed iaculis posuere diam ut cursus. 
-			</p>
-		</div>
-			
-		<div class="col-md-6">
-			 
-			<h2 class='head-font-bold header-details-blue sub-header'>Main Sub Text</h3>
-			<p class="text-muted">
-				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. <em>Morbi commodo sodales nisi id sodales. Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui.</em> Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. <small>Aliquam mi erat, aliquam vel luctus eu, pharetra quis elit. Nulla euismod ultrices massa, et feugiat ipsum consequat eu.</small>
-			</p>
-		</div>
-		<div class="col-md-3">
-			<h4 class='head-font-bold header-details-grey'>
-				Wetter
-			</h4>
-			<div>	
-				<div id="wcom-fdde0e4ef7c2ea6d7a7975753503eab2" style="border: 0px; background-color: transparent; border-radius: 0px; color: rgb(0, 0, 0);" class="wcom-default w150x150 weather-widget">
-					<div class="wcom-city">
-						<a style="color: rgb(0, 0, 0);" href="http://www.wetter.com/deutschland/sankt_andreasberg/st_andreasberg/DE0012197005.html" target="_blank" rel="nofollow" title="Wetter &quot; St. Andreasberg &quot;"> St. Andreasberg </a>
-					</div>
-					<div id="wcom-fdde0e4ef7c2ea6d7a7975753503eab2-weather"></div>					
-				</div>		
-			</div>
-		</div>
-	</div>
+                <div class="pin blue">
+                    <div class="text-wrap">
+                        <blockquote>"Nichts auf der Welt ist so gerecht verteilt wie der Verstand. Denn jedermann ist überzeugt, dass er genug davon habe."</blockquote>
+                        <p>René Descartes, französischer Philosoph</p>
+                    </div>
+                </div>
 
-	</div>	
-		<%= render 'footer' %>
-	</div>
+                <div class="pin purple">
+                    <div class="text-wrap">
+                        <blockquote>"Wenn Sie genug gespielt haben, können Sie sich jetzt <%= link_to 'einloggen', user_session_path, class: "home-link" %>"</blockquote>
+                        <p>Ulrich Stindt van Well</p>
+                    </div>
+                </div>
+
+                <div class="pin green">
+                    <div class="text-wrap">
+                        <blockquote>"Wir bekommen mit unserer Geburt das Leben geschenkt, doch viele von uns haben noch nicht einmal das Geschenkpapier abgemacht."</blockquote>
+                        <p>Felice Leonardo -Leo- Buscaglia, US-amerikanischer Philosoph und Autor</p>
+                    </div>
+                </div>
+
+                <div class="pin yellow">
+                    <div class="text-wrap">
+                        <blockquote>"Hoffnung ist der Vogel, der singt, wenn die Nacht noch dunkel ist."</blockquote>
+                        <p>Rabindranath Tagore, bengalischer Philosoph und Dichter</p>
+                    </div>
+                </div>
+
+                <div class="pin red">
+                    <div class="text-wrap">
+                        <blockquote>"Der Kluge lernt aus allem und jedem, der Normale aus seinen Erfahrungen und der Dumme weiß schon alles besser."</blockquote>
+                        <p>Sokrates, griechischer Philosoph</p>
+                    </div>
+                </div>
+
+                <div class="pin yellow">
+                    <div class="text-wrap">
+                        <blockquote>"Es ist besser, ein kleines Licht anzuzünden, als über die Dunkelheit zu schimpfen."</blockquote>
+                        <p>Laozi, chinesischer Philosoph</p>
+                    </div>
+                </div>
+
+                <div class="pin green">
+                    <div class="text-wrap">
+                        <blockquote>"Es ist kein Zeichen von Gesundheit, an eine von Grund auf kranke Gesellschaft gut angepasst zu sein."</blockquote>
+                        <p>Jiddu Krishnamurti, indischer Philosoph und Theosoph</p>
+                    </div>
+                </div>
+            </div>
+        </div>

@@ -1,0 +1,57 @@
+<%= form_for(kontoumsatz) do |f| %>
+  <% if kontoumsatz.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(kontoumsatz.errors.count, "error") %> prohibited this kontoumsatz from being saved:</h2>
+
+      <ul>
+      <% kontoumsatz.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weg %>
+    <%= f.number_field :weg %>
+  </div>
+
+  <div class="field">
+    <%= f.label :wertstellung %>
+    <%= f.text_field :wertstellung %>
+  </div>
+
+  <div class="field">
+    <%= f.label :umsatzart %>
+    <%= f.text_field :umsatzart %>
+  </div>
+
+  <div class="field">
+    <%= f.label :buchungsdetails %>
+    <%= f.text_field :buchungsdetails %>
+  </div>
+
+  <div class="field">
+    <%= f.label :auftraggeber %>
+    <%= f.text_field :auftraggeber %>
+  </div>
+
+  <div class="field">
+    <%= f.label :empfaenger %>
+    <%= f.text_field :empfaenger %>
+  </div>
+
+  <div class="field">
+    <%= f.label :betrag %>
+    <%= f.text_field :betrag %>
+  </div>
+
+  <div class="field">
+    <%= f.label :saldo %>
+    <%= f.text_field :saldo %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Weg:</strong>
+  <%= @kontoumsatz.weg %>
+</p>
+
+<p>
+  <strong>Wertstellung:</strong>
+  <%= @kontoumsatz.wertstellung %>
+</p>
+
+<p>
+  <strong>Umsatzart:</strong>
+  <%= @kontoumsatz.umsatzart %>
+</p>
+
+<p>
+  <strong>Buchungsdetails:</strong>
+  <%= @kontoumsatz.buchungsdetails %>
+</p>
+
+<p>
+  <strong>Auftraggeber:</strong>
+  <%= @kontoumsatz.auftraggeber %>
+</p>
+
+<p>
+  <strong>Empfaenger:</strong>
+  <%= @kontoumsatz.empfaenger %>
+</p>
+
+<p>
+  <strong>Betrag:</strong>
+  <%= @kontoumsatz.betrag %>
+</p>
+
+<p>
+  <strong>Saldo:</strong>
+  <%= @kontoumsatz.saldo %>
+</p>
+
+<%= link_to 'Edit', edit_kontoumsatz_path(@kontoumsatz) %> |
+<%= link_to 'Back', kontoumsatzs_path %>
