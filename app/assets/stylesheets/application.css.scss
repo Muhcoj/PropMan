@@ -67,7 +67,7 @@ body {
 
 .my-container {
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 .my-container:before {
     content: ' ';
