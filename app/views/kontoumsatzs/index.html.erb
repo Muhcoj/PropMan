@@ -2,6 +2,12 @@
 
   <h3 class='#'>Kontoumsatzs</h3><br>
 
+  <p>
+    Download:
+    <%= link_to "CSV", kontoumsatzs_path(format: "csv") %>
+    <%= link_to "Excel", kontoumsatzs_path(format: "xls") %>
+  </p>
+
   <table class="table table-striped table-hover table-details">
     <thead>
       <tr>

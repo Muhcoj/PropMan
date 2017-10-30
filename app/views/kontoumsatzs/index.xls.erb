@@ -1,0 +1,32 @@
+<table border="1" class="table table-striped table-hover table-details">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Weg</th>
+      <th>Wertstellung</th>
+      <th>Umsatzart</th>
+      <th>Buchungsdetails</th>
+      <th>Auftraggeber</th>
+      <th>Empfaenger</th>
+      <th>Betrag</th>
+      <th>Saldo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @kontoumsatzs.each do |kontoumsatz| %>
+      <tr>
+        <td><%= kontoumsatz.id %></td>
+        <td><%= kontoumsatz.weg %></td>
+        <td><%= kontoumsatz.wertstellung %></td>
+        <td><%= kontoumsatz.umsatzart %></td>
+        <td><%= kontoumsatz.buchungsdetails %></td>
+        <td><%= kontoumsatz.auftraggeber %></td>
+        <td><%= kontoumsatz.empfaenger %></td>
+        <td><%= kontoumsatz.betrag %></td>
+        <td><%= kontoumsatz.saldo %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

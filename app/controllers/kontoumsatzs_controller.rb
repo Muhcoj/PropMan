@@ -4,7 +4,12 @@ class KontoumsatzsController < ApplicationController
   # GET /kontoumsatzs
   # GET /kontoumsatzs.json
   def index
-    @kontoumsatzs = Kontoumsatz.all
+    @kontoumsatzs = Kontoumsatz.order(:weg)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @kontoumsatzs.to_csv }
+      format.xls #{ send_data @kontoumsatzs.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /kontoumsatzs/1
